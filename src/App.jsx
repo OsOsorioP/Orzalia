@@ -1,18 +1,10 @@
 import "./App.css";
-import { useEffect } from "react";
-import { postCohereChat } from "./services/cohereAPI";
-import { useState } from "react";
+import SummarizerTool from "./components/features/summarizer/SumarizerTool";
 
 function App() {
-  const [cohere, setCohere] = useState(null)
-
-  useEffect(() => {
-    postCohereChat(setCohere);
-  }, []);
-
   return (
     <main>
-      <p>{cohere?.message?.content?.[0].text}</p>
+      <SummarizerTool />
     </main>
   );
 }
