@@ -3,7 +3,7 @@ import SummarizerTool from "./components/features/summarizer/SumarizerTool";
 
 function App() {
   return (
-    <main>
+    <main className="app-container">
       <SummarizerTool />
     </main>
   );
