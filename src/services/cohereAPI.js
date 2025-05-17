@@ -29,13 +29,11 @@ export const postCohereChat = async (
       }
     );
     if (!res.data) {
-      throw new Error("Error");
+      throw new Error("Error al conectarse a la API");
     }
     setIsLoading(false);
-    console.log(res.data);
     return res.data.message.content?.[0].text;
   } catch (err) {
     setError(err);
-    console.log(err);
   }
 };
