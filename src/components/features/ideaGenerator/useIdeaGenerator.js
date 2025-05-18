@@ -1,0 +1,1 @@
+// Logica del custom hook para el ideaGeneratorTool.jsx
