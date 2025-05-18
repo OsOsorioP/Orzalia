@@ -4,6 +4,7 @@
 [![React](https://img.shields.io/badge/React-gray?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/JavaScript-gray?logo=javascript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-gray?logo=vite)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Axios-gray?logo=axios)](https://vitejs.dev/)
 [![Cohere API](https://img.shields.io/badge/Cohere%20API-Integrada-orange)](https://cohere.com/)
 
 <!-- Reemplaza TU_USUARIO/TU_REPOSITORIO con tu información -->
@@ -13,11 +14,12 @@ Una aplicación web interactiva construida con React, JavaScript y Vite que se i
 
 <!-- 🖼️ **[ESPACIO PARA UN GIF O SCREENSHOT PRINCIPAL DEL PROYECTO]** -->
 <!-- Ejemplo: <p align="center"><img src="./docs/demo.gif" alt="Demo del Asistente IA" width="700"/></p> -->
-
+---
 ## Demo en Vivo
 
 <!-- 🔗 **[ENLACE A TU PROYECTO DESPLEGADO AQUÍ CUANDO ESTÉ LISTO]** -->
 <!-- Ejemplo: [https://mi-asistente-cohere.vercel.app/](https://mi-asistente-cohere.vercel.app/) -->
+---
 
 ## Ruta del Proyecto
 
