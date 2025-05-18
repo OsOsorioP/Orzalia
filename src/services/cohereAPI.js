@@ -4,8 +4,8 @@ const COHERE_API_KEY = import.meta.env.VITE_COHERE_API_KEY;
 const COHERE_API_URL = import.meta.env.VITE_COHERE_API_URL;
 
 export const postCohereChat = async (
-  prompt,
-  message,
+  system_prompt,
+  user_prompt,
   setIsLoading,
   setError
 ) => {
@@ -17,8 +17,8 @@ export const postCohereChat = async (
         stream: false,
         model: "command-a-03-2025",
         messages: [
-          { role: "system", content: prompt },
-          { role: "user", content: message },
+          { role: "system", content: system_prompt },
+          { role: "user", content: user_prompt },
         ],
       },
       {
