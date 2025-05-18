@@ -11,9 +11,9 @@ export const useSummarizer = () => {
     setIsLoading(true);
     setError(null);
     setSummary(null);
-    const prompt = `Resume el siguiente texto en una longitud ${length}. El resumen debe ser conciso y destacar los puntos clave.`;
+    const system_prompt = `Resume el siguiente texto en una longitud ${length}. El resumen debe ser conciso y destacar los puntos clave.`;
 
-    const responseText = postCohereChat(prompt, text, setIsLoading, setError);
+    const responseText = postCohereChat(system_prompt, text, setIsLoading, setError);
     setSummary(responseText);
   }, []);
 
