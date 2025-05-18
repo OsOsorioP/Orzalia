@@ -5,7 +5,7 @@ const SummarizerTool = () => {
   const [text, setText] = useState("");
   const [summaryLength, setSummaryLength] = useState("medium");
 
-  const { summary, isLoading, error, generateSummary } = useSummarizer(text);
+  const { summary, isLoading, error, generateSummary } = useSummarizer();
 
   const handleSummarizerClick = () => {
     generateSummary(text, summaryLength);
@@ -30,7 +30,6 @@ const SummarizerTool = () => {
           value={summaryLength}
           onChange={(e) => setSummaryLength(e.target.value)}
           disabled={isLoading}
-          style={{resize:"none",}}
         >
           <option value="short">Pequeño</option>
           <option value="medium">Mediano</option>
