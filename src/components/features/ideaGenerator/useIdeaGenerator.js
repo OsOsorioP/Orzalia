@@ -4,7 +4,7 @@ import { postCohereChat } from "../../../services/cohereAPI";
 
 export const useIdeaGenerator = () => {
   const [ideas, setIdeas] = useState([]);
-  const [isLoagind, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const generateIdeas = useCallback((topic, numberOfIdeas, contentType) => {
@@ -18,10 +18,10 @@ export const useIdeaGenerator = () => {
     setError(null);
     setIdeas([]);
 
-    const system_prompt = `Genera ${numberOfIdeas} ideas creativas para ${contentType} sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
+    const systemPrompt = `Genera ${numberOfIdeas} ideas creativas para ${contentType} sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
 
     const responseIdeaGenerate = postCohereChat(
-      system_prompt,
+      systemPrompt,
       topic,
       setIsLoading,
       setError
@@ -31,5 +31,5 @@ export const useIdeaGenerator = () => {
     );
   }, []);
 
-  return { ideas, isLoagind, error, generateIdeas };
+  return { ideas, isLoading, error, generateIdeas };
 };
