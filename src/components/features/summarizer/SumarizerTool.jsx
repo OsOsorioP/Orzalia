@@ -13,7 +13,7 @@ const SummarizerTool = () => {
 
   return (
     <main>
-      <h2>Resumirdor de Texto</h2>
+      <h2>Resumirdor</h2>
       <textarea
         name="textArea"
         id="textArea"
@@ -30,14 +30,15 @@ const SummarizerTool = () => {
           value={summaryLength}
           onChange={(e) => setSummaryLength(e.target.value)}
           disabled={isLoading}
+          style={{resize:"none",}}
         >
-          <option value="short">corta</option>
-          <option value="medium">media</option>
-          <option value="long">larga</option>
+          <option value="short">Pequeño</option>
+          <option value="medium">Mediano</option>
+          <option value="long">Grande</option>
         </select>
       </div>
       <button onClick={handleSummarizerClick} disabled={isLoading}>
-        {isLoading ? "Resumiendo..." : "Resumir Texto"}
+        {isLoading ? "Resumiendo..." : "Resumir"}
       </button>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {summary && !isLoading && (
