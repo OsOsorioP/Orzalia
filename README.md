@@ -2,7 +2,7 @@
 
 [![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20desarrollo-yellowgreen)](https://github.com/TU_USUARIO/TU_REPOSITORIO)
 [![React](https://img.shields.io/badge/React-gray?logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/JavaScript-gray?logo=javascript)](https://www.typescriptlang.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-gray?logo=javascript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-gray?logo=vite)](https://vitejs.dev/)
 [![Vite](https://img.shields.io/badge/Axios-gray?logo=axios)](https://vitejs.dev/)
 [![Cohere API](https://img.shields.io/badge/Cohere%20API-Integrada-orange)](https://cohere.com/)
