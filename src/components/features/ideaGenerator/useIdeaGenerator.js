@@ -3,33 +3,33 @@ import { useState } from "react";
 import { postCohereChat } from "../../../services/cohereAPI";
 
 export const useIdeaGenerator = () => {
-  const [Ideas, setIdeas] = useState(null);
-  const [isLoagind, setIsLoading] = useState(null);
+  const [ideas, setIdeas] = useState([]);
+  const [isLoagind, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const generateIdeGenerator = useCallback(
-    (topic, numberOfIdeas, contentType) => {
-      setIsLoading(true);
-      setError(null);
-      setIdeas(null);
-      const system_prompt = `Genera ${
-        numberOfIdeas || 5
-      } ideas creativas para ${
-        contentType || "artículos de blog"
-      } sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
+  const generateIdeas = useCallback((topic, numberOfIdeas, contentType) => {
+    if (!topic || !topic.trim) {
+      setError("Por favor, ingresa un tema o palabra clave.");
+      setIdeas([]);
+      return;
+    }
 
-      const responseIdeaGenerate = postCohereChat(
-        system_prompt,
-        topic,
-        setIsLoading,
-        setError
-      );
-      setIdeas(
-        responseIdeaGenerate.split("\n").filter((idea) => idea.trim() !== "")
-      );
-    },
-    []
-  );
+    setIsLoading(true);
+    setError(null);
+    setIdeas([]);
 
-  return { Ideas, isLoagind, error, generateIdeGenerator };
+    const system_prompt = `Genera ${numberOfIdeas} ideas creativas para ${contentType} sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
+
+    const responseIdeaGenerate = postCohereChat(
+      system_prompt,
+      topic,
+      setIsLoading,
+      setError
+    );
+    setIdeas(
+      responseIdeaGenerate.split("\n").filter((idea) => idea.trim() !== "")
+    );
+  }, []);
+
+  return { ideas, isLoagind, error, generateIdeas };
 };
