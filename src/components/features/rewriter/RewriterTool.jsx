@@ -19,6 +19,9 @@ export const RewriterTool = () => {
         id=""
         value={originalText}
         onChange={(e) => setOriginalText(e.target.value)}
+        placeholder="Ingresa el texto que quieres reescribir aquí..."
+        rows={8}
+        disabled={isLoading}
       ></textarea>
 
       <fieldset>
@@ -29,7 +32,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal1"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Hacer más formal"}
             disabled={isLoading}
             value="Hacer más formal"
             onChange={(e) => setRewriteGoal(e.target.value)}
@@ -41,7 +44,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal2"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Hacer más informal/casual"}
             disabled={isLoading}
             value="Hacer más informal/casual"
             onChange={(e) => setRewriteGoal(e.target.value)}
@@ -55,7 +58,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal3"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Simplificar (más fácil de entender)"}
             disabled={isLoading}
             value="Simplificar (más fácil de entender)"
             onChange={(e) => setRewriteGoal(e.target.value)}
@@ -67,7 +70,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal4"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Expandir (añadir más detalle)"}
             disabled={isLoading}
             value="Expandir (añadir más detalle)"
             onChange={(e) => setRewriteGoal(e.target.value)}
@@ -79,7 +82,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal5"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Corregir gramática y estilo"}
             disabled={isLoading}
             value="Corregir gramática y estilo"
             onChange={(e) => setRewriteGoal(e.target.value)}
@@ -91,7 +94,7 @@ export const RewriterTool = () => {
             type="radio"
             name="rewriteGoal"
             id="rewriteGoal6"
-            checked={rewriteGoal}
+            checked={rewriteGoal === "Cambiar a voz activa/pasiva"}
             disabled={isLoading}
             value="Cambiar a voz activa/pasiva"
             onChange={(e) => setRewriteGoal(e.target.value)}
