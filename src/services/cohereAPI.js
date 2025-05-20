@@ -4,8 +4,8 @@ const COHERE_API_KEY = import.meta.env.VITE_COHERE_API_KEY;
 const COHERE_API_URL = import.meta.env.VITE_COHERE_API_URL;
 
 export const postCohereChat = async (
-  system_prompt,
-  user_prompt,
+  systemPrompt,
+  userMessage,
   setIsLoading,
   setError
 ) => {
@@ -17,8 +17,8 @@ export const postCohereChat = async (
         stream: false,
         model: "command-a-03-2025",
         messages: [
-          { role: "system", content: system_prompt },
-          { role: "user", content: user_prompt },
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userMessage },
         ],
       },
       {
@@ -31,9 +31,10 @@ export const postCohereChat = async (
     if (!res.data) {
       throw new Error("Error al conectarse a la API");
     }
-    setIsLoading(false);
     return res.data.message.content?.[0].text;
   } catch (err) {
     setError(err);
+  } finally {
+    setIsLoading(false);
   }
 };
