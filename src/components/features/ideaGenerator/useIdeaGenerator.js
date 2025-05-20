@@ -7,29 +7,32 @@ export const useIdeaGenerator = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const generateIdeas = useCallback((topic, numberOfIdeas, contentType) => {
-    if (!topic || !topic.trim) {
-      setError("Por favor, ingresa un tema o palabra clave.");
+  const generateIdeas = useCallback(
+    async (topic, numberOfIdeas, contentType) => {
+      if (!topic || !topic.trim()) {
+        setError("Por favor, ingresa un tema o palabra clave.");
+        setIdeas([]);
+        return;
+      }
+
+      setIsLoading(true);
+      setError(null);
       setIdeas([]);
-      return;
-    }
 
-    setIsLoading(true);
-    setError(null);
-    setIdeas([]);
+      const systemPrompt = `Genera ${numberOfIdeas} ideas creativas para ${contentType} sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
 
-    const systemPrompt = `Genera ${numberOfIdeas} ideas creativas para ${contentType} sobre el tema: "${topic}". Cada idea debe ser una frase concisa. Devuelve cada idea en una nueva línea.`;
-
-    const responseIdeaGenerate = postCohereChat(
-      systemPrompt,
-      topic,
-      setIsLoading,
-      setError
-    );
-    setIdeas(
-      responseIdeaGenerate.split("\n").filter((idea) => idea.trim() !== "")
-    );
-  }, []);
+      const responseIdeaGenerate = await postCohereChat(
+        systemPrompt,
+        topic,
+        setIsLoading,
+        setError
+      );
+      setIdeas(
+        responseIdeaGenerate.split("\n").filter((idea) => idea.trim() !== "")
+      );
+    },
+    []
+  );
 
   return { ideas, isLoading, error, generateIdeas };
 };
