@@ -1,29 +1,36 @@
 import { useState } from "react";
 import { useSummarizer } from "./useSummarizer";
 import { Textarea } from "../../components/common/Textarea/Textarea";
+import Button from "../../components/common/Button/Button";
+import styles from "./Summarizer.module.css";
 
 const SummarizerTool = () => {
-  const [text, setText] = useState("");
+  const [originalText, setOriginalText] = useState("");
   const [summaryLength, setSummaryLength] = useState("medium");
 
   const { summary, isLoading, error, generateSummary } = useSummarizer();
 
   const handleSummarizerClick = () => {
-    generateSummary(text, summaryLength);
+    generateSummary(originalText, summaryLength);
   };
 
   return (
-    <main>
+    <section>
       <h2>Resumidor</h2>
-      <Textarea
-        name="textArea"
-        id="textArea"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Pega aquí el texto que deseas resumir..."
-        rows={10}
-        disabled={isLoading}
-      />
+      <div className={styles.summarizer}>
+        <Textarea
+          name="originalText"
+          id="originalText"
+          value={originalText}
+          onChange={(e) => setOriginalText(e.target.value)}
+          placeholder="Pega aquí el texto que deseas resumir..."
+          rows={10}
+          disabled={isLoading}
+        />
+        <div className={styles.results}>
+          {summary && !isLoading && <p>{summary}</p>}
+        </div>
+      </div>
       <div>
         <label htmlFor="summaryLength">Longitud del resumen:</label>
         <select
@@ -37,17 +44,11 @@ const SummarizerTool = () => {
           <option value="long">Grande</option>
         </select>
       </div>
-      <button onClick={handleSummarizerClick} disabled={isLoading}>
-        {isLoading ? "Resumiendo..." : "Resumir"}
-      </button>
+      <Button onClick={handleSummarizerClick} disabled={isLoading}>
+        Resumir
+      </Button>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
-      {summary && !isLoading && (
-        <div>
-          <h3>Resumen Generado:</h3>
-          <pre>{summary}</pre>
-        </div>
-      )}
-    </main>
+    </section>
   );
 };
 
