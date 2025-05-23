@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useRewriter } from "./useRewriter";
+import Button from "../../components/common/Button/Button";
+import Textarea from "../../components/common/Textarea/Textarea";
 
 export const RewriterTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -14,7 +16,7 @@ export const RewriterTool = () => {
   return (
     <section>
       <h2>Asistente de Reescritura</h2>
-      <textarea
+      <Textarea
         name=""
         id=""
         value={originalText}
@@ -22,8 +24,7 @@ export const RewriterTool = () => {
         placeholder="Ingresa el texto que quieres reescribir aquí..."
         rows={8}
         disabled={isLoading}
-      ></textarea>
-
+      />
       <fieldset>
         <legend>Objetivo de la reescritura</legend>
         <div>
@@ -101,9 +102,9 @@ export const RewriterTool = () => {
           />
         </div>
       </fieldset>
-      <button onClick={handleRewriteClick} disabled={isLoading}>
-        {isLoading ? "Reescribiendo..." : "Reescribir"}
-      </button>
+      <Button onClick={handleRewriteClick} disabled={isLoading}>
+        Reescribir
+      </Button>
       {error && <p> Error: {error} </p>}
       {rewrittenText && !isLoading && (
         <div>
