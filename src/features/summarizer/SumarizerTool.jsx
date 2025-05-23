@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSummarizer } from "./useSummarizer";
+import { Textarea } from "../../components/common/Textarea/Textarea";
 
 const SummarizerTool = () => {
   const [text, setText] = useState("");
@@ -13,8 +14,7 @@ const SummarizerTool = () => {
 
   return (
     <main>
-      <h2>Resumirdor</h2>
-      <textarea
+      <Textarea
         name="textArea"
         id="textArea"
         value={text}
@@ -22,6 +22,7 @@ const SummarizerTool = () => {
         placeholder="Pega aquí el texto que deseas resumir..."
         rows={10}
         disabled={isLoading}
+        label="Resumidor"
       />
       <div>
         <label htmlFor="summaryLength">Longitud del resumen:</label>
