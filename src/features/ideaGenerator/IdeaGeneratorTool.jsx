@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useIdeaGenerator } from "./useIdeaGenerator";
+import Button from "../../components/common/Button/Button"
 
 const IdeaGeneratorTool = () => {
   const [topic, setTopic] = useState("");
@@ -47,9 +48,7 @@ const IdeaGeneratorTool = () => {
         disabled={isLoading}
         placeholder="Ej: artículos de blog, videos de YouTube, tweets"
       />
-      <button onClick={handleIdeaGenerator} disabled={isLoading}>
-        {isLoading ? "Generando Ideas..." : "Generar"}
-      </button>
+      <Button onClick={handleIdeaGenerator} disabled={isLoading}>{isLoading ? "Generando Ideas..." : "Generar"}</Button>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {ideas && !isLoading && ideas.length > 0 && (
         <div>
