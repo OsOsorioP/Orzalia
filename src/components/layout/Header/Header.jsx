@@ -9,7 +9,7 @@ const Header = () => {
       <Link to="/">
         <picture className={styles.logoContainer}>
           <img className={styles.logo} src={logo} alt="" />
-          <h1 className={""}>Rexi Toolkit</h1>
+          <h1 className={styles.title}>Rexi Toolkit</h1>
         </picture>
       </Link>
 
