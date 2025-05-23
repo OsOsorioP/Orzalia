@@ -1,7 +1,7 @@
 import styles from "./Input.module.css";
 
-const Input = () => {
-  return <input className={styles.myInput} type="text" />;
+const Input = (type) => {
+  return <input className={styles.myInput} type={type} />;
 };
 
 export default Input;
