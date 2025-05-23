@@ -14,6 +14,7 @@ const SummarizerTool = () => {
 
   return (
     <main>
+      <h2>Resumidor</h2>
       <Textarea
         name="textArea"
         id="textArea"
@@ -22,7 +23,6 @@ const SummarizerTool = () => {
         placeholder="Pega aquí el texto que deseas resumir..."
         rows={10}
         disabled={isLoading}
-        label="Resumidor"
       />
       <div>
         <label htmlFor="summaryLength">Longitud del resumen:</label>
