@@ -2,12 +2,22 @@ import { useState } from "react";
 import { useRewriter } from "./useRewriter";
 import Button from "../../components/common/Button/Button";
 import Textarea from "../../components/common/Textarea/Textarea";
+import BoxText from "../../components/common/BoxText/BoxText";
 
 export const RewriterTool = () => {
   const [originalText, setOriginalText] = useState("");
   const [rewriteGoal, setRewriteGoal] = useState("Hacer más formal");
 
   const { rewrittenText, isLoading, error, generateRewrite } = useRewriter();
+
+  const rewriteOptions = [
+    {value:"Hacer más formal",label:"Hacer más formal",id:"formal"},
+    {value:"Hacer más informal/casual",label:"Hacer más informal/casual",id:"informal"},
+    {value:"Simplificar (más fácil de entender)",label:"Simplificar (más fácil de entender)",id:"simplify"},
+    {value:"Expandir (añadir más detalle)",label:"Expandir (añadir más detalle)",id:"expand"},
+    {value:"Corregir gramática y estilo",label:"Corregir gramática y estilo",id:"correct"},
+    {value:"Cambiar a voz activa/pasiva",label:"Cambiar a voz activa/pasiva",id:"voice"},
+  ]
 
   const handleRewriteClick = () => {
     generateRewrite(originalText, rewriteGoal);
@@ -17,101 +27,32 @@ export const RewriterTool = () => {
     <section>
       <h2>Asistente de Reescritura</h2>
       <Textarea
-        name=""
-        id=""
+        name="textAreaRewrite"
+        id="textAreaRewrite"
         value={originalText}
         onChange={(e) => setOriginalText(e.target.value)}
         placeholder="Ingresa el texto que quieres reescribir aquí..."
         rows={8}
         disabled={isLoading}
       />
+      <BoxText>
+      {rewrittenText && !isLoading && (
+          <p>{rewrittenText}</p>
+      )}
+      </BoxText>
       <fieldset>
-        <legend>Objetivo de la reescritura</legend>
-        <div>
-          <label htmlFor="rewriteGoal">Hacer más formal</label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal1"
-            checked={rewriteGoal === "Hacer más formal"}
-            disabled={isLoading}
-            value="Hacer más formal"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="rewriteGoal">Hacer más informal/casual</label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal2"
-            checked={rewriteGoal === "Hacer más informal/casual"}
-            disabled={isLoading}
-            value="Hacer más informal/casual"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="rewriteGoal">
-            Simplificar (más fácil de entender)
-          </label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal3"
-            checked={rewriteGoal === "Simplificar (más fácil de entender)"}
-            disabled={isLoading}
-            value="Simplificar (más fácil de entender)"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="rewriteGoal">"Expandir (añadir más detalle)</label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal4"
-            checked={rewriteGoal === "Expandir (añadir más detalle)"}
-            disabled={isLoading}
-            value="Expandir (añadir más detalle)"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="rewriteGoal">Corregir gramática y estilo</label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal5"
-            checked={rewriteGoal === "Corregir gramática y estilo"}
-            disabled={isLoading}
-            value="Corregir gramática y estilo"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="rewriteGoal">Cambiar a voz activa/pasiva</label>
-          <input
-            type="radio"
-            name="rewriteGoal"
-            id="rewriteGoal6"
-            checked={rewriteGoal === "Cambiar a voz activa/pasiva"}
-            disabled={isLoading}
-            value="Cambiar a voz activa/pasiva"
-            onChange={(e) => setRewriteGoal(e.target.value)}
-          />
-        </div>
+        <legend>Objetivo de la reescritura:</legend>
+        {rewriteOptions.map((option)=>(
+          <div key={option.id}>
+            <input type="radio" name="rewriteGoal" id={option.id} value={option.value} checked={rewriteGoal === option.value} onChange={(e)=>setRewriteGoal(e.target.value)} disabled={isLoading}/>
+            <label htmlFor={option.id}>{option.label}</label>
+          </div>
+        ))}
       </fieldset>
       <Button onClick={handleRewriteClick} disabled={isLoading}>
         Reescribir
       </Button>
       {error && <p> Error: {error} </p>}
-      {rewrittenText && !isLoading && (
-        <div>
-          <h3>Texto Reescrito:</h3>
-          <p>{rewrittenText}</p>
-        </div>
-      )}
     </section>
   );
 };
