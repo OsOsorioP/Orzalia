@@ -3,6 +3,7 @@ import { useSummarizer } from "./useSummarizer";
 import { Textarea } from "../../components/common/Textarea/Textarea";
 import Button from "../../components/common/Button/Button";
 import styles from "./Summarizer.module.css";
+import BoxText from "../../components/common/BoxText/BoxText";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -27,9 +28,7 @@ const SummarizerTool = () => {
           rows={10}
           disabled={isLoading}
         />
-        <div className={styles.results}>
-          {summary && !isLoading && <p>{summary}</p>}
-        </div>
+        <BoxText>{summary && !isLoading && <p>{summary}</p>}</BoxText>
       </div>
       <div>
         <label htmlFor="summaryLength">Longitud del resumen:</label>
