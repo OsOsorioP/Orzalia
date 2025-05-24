@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useIdeaGenerator } from "./useIdeaGenerator";
-import Button from "../../components/common/Button/Button"
+import Button from "../../components/common/Button/Button";
+import styles from "../Features.module.css"
 
 const IdeaGeneratorTool = () => {
   const [topic, setTopic] = useState("");
@@ -15,7 +16,13 @@ const IdeaGeneratorTool = () => {
 
   return (
     <section>
-      <h2>Generador de Ideas para Contenido</h2>
+      <div className={styles.header}>
+        <h2>Generador de Ideas para Contenido</h2>
+        <p>
+          El Resumidor transforma textos extensos en un resumen de texto a tu
+          tamaño deseado. ¡No esperes más, resume texto con solo un clic!
+        </p>
+      </div>
       <label htmlFor="topic">tema o palabra clave principal</label>
       <input
         type="text"
@@ -48,16 +55,16 @@ const IdeaGeneratorTool = () => {
         disabled={isLoading}
         placeholder="Ej: artículos de blog, videos de YouTube, tweets"
       />
-      <Button onClick={handleIdeaGenerator} disabled={isLoading}>{isLoading ? "Generando Ideas..." : "Generar"}</Button>
+      <Button onClick={handleIdeaGenerator} disabled={isLoading}>
+        {isLoading ? "Generando Ideas..." : "Generar"}
+      </Button>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {ideas && !isLoading && ideas.length > 0 && (
         <div>
           <h3>Ideas Generadas:</h3>
           <ul>
             {ideas?.map((idea, index) => (
-              <li key={index}>
-                {idea}
-              </li>
+              <li key={index}>{idea}</li>
             ))}
           </ul>
         </div>
