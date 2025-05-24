@@ -1,0 +1,20 @@
+.boxText {
+  width: 500px;
+  height: 300px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  overflow: auto;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.boxText p {
+  margin: 0;
+  padding: 0;
+}
