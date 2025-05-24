@@ -1,5 +1,7 @@
 .boxText {
   width: 500px;
+  max-width: 500px;
+  min-width: 250px;
   height: 300px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -18,3 +20,16 @@
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 520px) {
+  .boxText {
+    width: 300px;
+  }
+}
+
+@media (min-width: 840px) and (max-width: 1030px) {
+  .boxText {
+    width: 400px;
+  }
+}
+

@@ -6,20 +6,22 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .navItem {
-  
 }
 
 .navLink {
+  text-decoration: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
   color: black;
   transition: background-color 0.2s ease-in-out;
 }
 
 .navLink:hover {
-  background-color: #555;
+  background-color: #afafaf;
 }
 
 .navLink.active {

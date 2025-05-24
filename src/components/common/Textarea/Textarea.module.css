@@ -10,28 +10,30 @@
 }
 
 .appTextarea {
-    width: 500px;
-    height: 300px;
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    resize: none;
+  width: 500px;
+  max-width: 500px;
+  min-width: 250px;
+  height: 300px;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  resize: none;
 }
 
-.appTextarea:focus{
+.appTextarea:focus {
   border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0 0.2rem rgba(0,123,255,0.25);
+  box-shadow: 0 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .appTextarea::placeholder {
-  color:#6c757d;
+  color: #6c757d;
   opacity: 1;
 }
 
@@ -42,7 +44,7 @@
 }
 
 .errorInput {
-  border-color: #dc3545
+  border-color: #dc3545;
 }
 
 .errorInput:focus {
@@ -54,4 +56,16 @@
   color: #dc3545;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+}
+
+@media (max-width: 520px) {
+  .appTextarea {
+    width: 300px;
+  }
+}
+
+@media (min-width: 840px) and (max-width: 1030px) {
+  .appTextarea {
+    width: 400px;
+  }
 }

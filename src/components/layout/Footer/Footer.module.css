@@ -1,0 +1,64 @@
+.footer {
+  width: 1200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descriptionPlataform {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.sectionTools ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+.sectionTools li {
+}
+
+.sectionLogo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionLogo p {
+  text-wrap: pretty;
+  max-width: 360px;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.logo h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footerDown {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socialNet {
+  display: flex;
+}
