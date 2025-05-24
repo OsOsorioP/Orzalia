@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSummarizer } from "./useSummarizer";
 import { Textarea } from "../../components/common/Textarea/Textarea";
 import Button from "../../components/common/Button/Button";
-import styles from "./Summarizer.module.css";
+import styles from "../Features.module.css";
 import BoxText from "../../components/common/BoxText/BoxText";
 
 const SummarizerTool = () => {
@@ -17,8 +17,15 @@ const SummarizerTool = () => {
 
   return (
     <section>
-      <h2>Resumidor</h2>
-      <div className={styles.summarizer}>
+      <div className={styles.header}>
+        <h2>Resumidor</h2>
+        <p>
+          El Resumidor transforma textos extensos en un resumen
+          de texto a tu tamaño deseado. ¡No esperes más, resume texto con solo un
+          clic!
+        </p>
+      </div>
+      <div className={styles.container}>
         <Textarea
           name="originalText"
           id="originalText"
