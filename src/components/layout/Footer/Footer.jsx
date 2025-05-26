@@ -4,6 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <hr />
       <div className={styles.descriptionPlataform}>
         <div className={styles.sectionTools}>
           <ul>
