@@ -1,5 +1,11 @@
+import RewriterTool from "../features/rewriter/RewriterTool";
+
 const RewritePage = () => {
-  return <></>;
+  return (
+    <main className="app-container">
+      <RewriterTool />
+    </main>
+  );
 };
 
 export default RewritePage;
