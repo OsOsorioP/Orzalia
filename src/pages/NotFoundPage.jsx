@@ -1,5 +1,5 @@
 const NotFoundPage = () => {
-  return <></>;
+  return <main className="app-container"></main>;
 };
 
 export default NotFoundPage;
