@@ -1,7 +1,5 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import IdeaGeneratorTool from "./features/ideaGenerator/IdeaGeneratorTool";
-import RewriterTool from "./features/rewriter/RewriterTool";
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import SummarizerPage from "./pages/SummarizerPage";
