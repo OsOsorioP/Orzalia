@@ -1,54 +1,51 @@
-/* src/components/organisms/HeroSection/HeroSection.module.css */
 .heroContainer {
   text-align: center;
-  margin-bottom: 3rem; /* mb-12 (12 * 0.25rem) */
-  padding: 2rem 1rem; /* Añadir algo de padding para que no pegue a los bordes */
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
 }
 
 .aiBadge {
-  display: inline-flex; /* Para alinear icono y texto */
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem; /* space-x-2 (2 * 0.25rem) */
-  background-color: #DBEAFE; /* bg-blue-100 */
-  color: #1E40AF; /* text-blue-800 (ajustado para contraste) */
-  padding: 0.5rem 1rem; /* px-4 py-2 */
-  border-radius: 9999px; /* rounded-full */
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 500; /* font-medium */
-  margin-bottom: 1rem; /* mb-4 */
+  gap: 0.5rem;
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .badgeIcon {
-  width: 1rem; 
+  width: 1rem;
   height: 1rem;
 }
 
 .heroTitle {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem;
   line-height: 2.5rem;
-  /* Para md:text-5xl */
   @media (min-width: 768px) {
-    font-size: 3rem; /* text-5xl */
+    font-size: 3rem;
     line-height: 1;
   }
-  font-weight: 700; /* font-bold (o 800 para extra-bold si tu fuente lo soporta) */
-  color: #111827; /* text-gray-900 */
-  margin-bottom: 1rem; /* mb-4 */
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
 }
 
 .gradientText {
-  /* Efecto de gradiente para el texto */
-  background-image: linear-gradient(to right, #2563EB, #0891B2); /* from-blue-600 to-cyan-600 */
-  -webkit-background-clip: text; /* Específico de Webkit/Blink para recortar el fondo al texto */
-  background-clip: text; /* Estándar */
-  color: transparent; /* Hace el color del texto transparente para mostrar el gradiente del fondo */
+  background-image: linear-gradient(to right, #2563eb, #0891b2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .heroDescription {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   line-height: 1.75rem;
-  color: #4B5563; /* text-gray-600 */
-  max-width: 56rem; /* max-w-3xl (3 * 16rem = 48rem, o 56rem si 3xl es más grande en tu config) - ajusta esto */
+  color: #4b5563;
+  max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
 }
