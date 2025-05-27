@@ -32,6 +32,21 @@
   justify-content: center;
 }
 
+.formIdeaGenerator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.formIdeaGenerator input{
+  border: 1px solid var(--text-color);
+  padding: 0.3rem;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
 .form select,
 .formIdeaGenerator select {
   font-size: 1rem;
@@ -40,15 +55,6 @@
   cursor: pointer;
   color: var(--text-color);
   background-color: transparent;
-  text-align: center;
-}
-
-.formIdeaGenerator {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 0 1rem;
-  align-items: center;
 }
 
 .form select::before {
