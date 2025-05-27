@@ -3,7 +3,7 @@ import styles from "./HeroSection.module.css"
 export const HeroSection = ({ title, subtitle, description, icon }) => {
   return (
     <section className={styles.container}>
-      <h1>{title}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.content}>
         <div>
           <h2>{subtitle}</h2>
