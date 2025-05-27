@@ -1,11 +1,14 @@
 .container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 2rem;
 }
 
 .title {
   font-size: 2rem;
+}
+
+.title span{
+  color: cadetblue;
 }
 
 .content {
