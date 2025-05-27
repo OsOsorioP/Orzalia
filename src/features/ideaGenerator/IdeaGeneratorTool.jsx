@@ -33,7 +33,7 @@ const IdeaGeneratorTool = () => {
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             disabled={isLoading}
-            placeholder="Ej: Inteligencia Artificial en la educación"
+            placeholder="Inteligencia Artificial en la educación"
           />
           <div>
             <label htmlFor="numberOfIdeas">Cantidad de ideas:</label>
@@ -58,7 +58,7 @@ const IdeaGeneratorTool = () => {
             value={contentType}
             onChange={(e) => setContentType(e.target.value)}
             disabled={isLoading}
-            placeholder="Ej: artículos de blog, videos de YouTube, tweets"
+            placeholder="artículos de blog, videos de YouTube, tweets"
           />
           <Button onClick={handleIdeaGenerator} disabled={isLoading}>
             {isLoading ? "Generando Ideas..." : "Generar"}
