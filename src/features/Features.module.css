@@ -40,15 +40,27 @@
   align-items: center;
 }
 
-.formIdeaGenerator input{
+.formIdeaGenerator input {
   border: 1px solid var(--text-color);
   padding: 0.3rem;
   width: 100%;
   border-radius: 0.3rem;
 }
 
+.fromRewriter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.fromRewriter fieldset {
+  width: fit-content;
+}
+
 .form select,
-.formIdeaGenerator select {
+.formIdeaGenerator select,
+.fromRewriter select {
   font-size: 1rem;
   font-weight: 400;
   border: none;
