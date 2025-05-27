@@ -6,3 +6,8 @@
   margin: 0 auto;
   align-items: center;
 }
+
+i,svg {
+  width: 6rem;
+  height: 6rem;
+}
