@@ -1,6 +1,7 @@
 import FeatureSection from "../components/common/feactureSection/FeactureSection";
 import HeroSection from "../components/common/heroSection/HeroSection";
 import SummarizerTool from "../features/summarizer/SumarizerTool";
+import {ClockIcon} from "@heroicons/react/24/solid"
 
 const SummarizerPage = () => {
   return (
@@ -12,7 +13,7 @@ const SummarizerPage = () => {
         description={
           "Parafrasist le permite a los usuarios hacer el resumen de un texto rápidamente, condensando textos largos en resúmenes breves y manejables, ahorrando horas de lectura y análisis."
         }
-        icon={"clock"}
+        icon={<ClockIcon/>}
       />
       <FeatureSection
         title={"Generador de resúmenes de distintos tamaños e idiomas"}

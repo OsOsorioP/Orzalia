@@ -1,13 +1,15 @@
-export const FeatureSection = ({ title, subtitle, description, icon }) => {
+import styles from "./HeroSection.module.css"
+
+export const HeroSection = ({ title, subtitle, description, icon }) => {
   return (
-    <section>
+    <section className={styles.container}>
       <h1>{title}</h1>
-      <div>
+      <div className={styles.content}>
         <div>
           <h2>{subtitle}</h2>
           <p>{description}</p>
         </div>
-        <div>
+        <div className={styles.icon}>
           <i>{icon}</i>
         </div>
       </div>
@@ -15,4 +17,4 @@ export const FeatureSection = ({ title, subtitle, description, icon }) => {
   );
 };
 
-export default FeatureSection;
+export default HeroSection;
