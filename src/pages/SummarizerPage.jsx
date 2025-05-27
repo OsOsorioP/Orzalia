@@ -1,19 +1,23 @@
 import FeatureSection from "../components/common/feactureSection/FeactureSection";
 import HeroSection from "../components/common/heroSection/HeroSection";
 import SummarizerTool from "../features/summarizer/SumarizerTool";
-import {ClockIcon} from "@heroicons/react/24/solid"
+import { ClockIcon } from "@heroicons/react/24/outline";
 
 const SummarizerPage = () => {
   return (
     <main className="app-container">
       <SummarizerTool />
       <HeroSection
-        title={"Resumir textos con Parafrasist. ¿Qué beneficios tiene?"}
+        title={
+          <h1>
+            Resumir textos con <span>Rexi Toolkit</span>. ¿Qué beneficios tiene?
+          </h1>
+        }
         subtitle={"El Resumen de textos te ahorra tiempo"}
         description={
           "Parafrasist le permite a los usuarios hacer el resumen de un texto rápidamente, condensando textos largos en resúmenes breves y manejables, ahorrando horas de lectura y análisis."
         }
-        icon={<ClockIcon/>}
+        icon={<ClockIcon />}
       />
       <FeatureSection
         title={"Generador de resúmenes de distintos tamaños e idiomas"}
