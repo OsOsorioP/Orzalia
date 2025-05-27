@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { useIdeaGenerator } from "./useIdeaGenerator";
+import Select from "../../components/common/Select/Select";
 import Button from "../../components/common/Button/Button";
 import styles from "../Features.module.css";
 import BoxText from "../../components/common/BoxText/BoxText";
+import HeroSection from "../../components/common/HeroSection/HeroSection";
 
 const IdeaGeneratorTool = () => {
   const [topic, setTopic] = useState("");
   const [numberOfIdeas, setNumberOfIdeas] = useState("3");
   const [contentType, setContentType] = useState("artículos de blog");
+  const options = [
+    { value: "1", label: "1 Idea" },
+    { value: "3", label: "3 Ideas" },
+    { value: "5", label: "5 Ideas" },
+    { value: "10", label: "10 Ideas" },
+  ];
 
   const { ideas, isLoading, error, generateIdeas } = useIdeaGenerator();
 
@@ -17,13 +25,11 @@ const IdeaGeneratorTool = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
-        <h1>Generador de Ideas para Contenido</h1>
-        <p>
-          El Resumidor transforma textos extensos en un resumen de texto a tu
-          tamaño deseado. ¡No esperes más, resume texto con solo un clic!
-        </p>
-      </div>
+      <HeroSection
+        titleGradientPart="Marketing"
+        titlePart1="Tu Herramienta de IA para"
+        description="Descubre cómo la inteligencia artificial puede revolucionar tu estrategia de marketing de contenidos."
+      />
       <div className={styles.content}>
         <div className={styles.formIdeaGenerator}>
           <label htmlFor="topic">Tema o palabra clave principal:</label>
@@ -36,19 +42,14 @@ const IdeaGeneratorTool = () => {
             placeholder="Inteligencia Artificial en la educación"
           />
           <div>
-            <label htmlFor="numberOfIdeas">Cantidad de ideas:</label>
-            <select
+            <Select
               id="numberOfIdeas"
               value={numberOfIdeas}
               onChange={(e) => setNumberOfIdeas(e.target.value)}
               disabled={isLoading}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+              option={options}
+              label={"Cantidad de ideas: "}
+            />
           </div>
           <label htmlFor="contentType">Tipo de contenido:</label>
           <input
