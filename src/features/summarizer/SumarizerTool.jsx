@@ -16,16 +16,15 @@ const SummarizerTool = () => {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
       <div className={styles.header}>
-        <h2>Resumidor</h2>
+        <h1>Resumidor</h1>
         <p>
-          El Resumidor transforma textos extensos en un resumen
-          de texto a tu tamaño deseado. ¡No esperes más, resume texto con solo un
-          clic!
+          El Resumidor transforma textos extensos en un resumen de texto a tu
+          tamaño deseado. ¡No esperes más, resume texto con solo un clic!
         </p>
       </div>
-      <div className={styles.container}>
+      <div className={styles.content}>
         <Textarea
           name="originalText"
           id="originalText"
@@ -37,8 +36,7 @@ const SummarizerTool = () => {
         />
         <BoxText>{summary && !isLoading && <p>{summary}</p>}</BoxText>
       </div>
-      <div>
-        <label htmlFor="summaryLength">Longitud del resumen:</label>
+      <div className={styles.form}>
         <select
           id="summaryLength"
           value={summaryLength}
@@ -49,10 +47,10 @@ const SummarizerTool = () => {
           <option value="medium">Mediano</option>
           <option value="long">Grande</option>
         </select>
+        <Button onClick={handleSummarizerClick} disabled={isLoading}>
+          Resumir
+        </Button>
       </div>
-      <Button onClick={handleSummarizerClick} disabled={isLoading}>
-        Resumir
-      </Button>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
     </section>
   );
