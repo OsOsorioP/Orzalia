@@ -3,9 +3,9 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const navLinks = [
-    { to: "/", name: "Summarizer" },
-    { to: "/idea_generator", name: "Idea Generator" },
-    { to: "/rewriter", name: "Rewriter" },
+    { to: "/", name: "Resumidor" },
+    { to: "/idea_generator", name: "Generador de ideas" },
+    { to: "/rewriter", name: "Reescritor" },
   ];
 
   const getNavLinkClass = ({ isActive }) => {
