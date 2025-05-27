@@ -4,6 +4,7 @@ import Button from "../../components/common/Button/Button";
 import Textarea from "../../components/common/Textarea/Textarea";
 import BoxText from "../../components/common/BoxText/BoxText";
 import styles from "../Features.module.css";
+import Select from "../../components/common/Select/Select";
 
 export const RewriterTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -68,18 +69,13 @@ export const RewriterTool = () => {
         </BoxText>
       </div>
       <div className={styles.fromRewriter}>
-        <select
+        <Select
           id="rewriterGoal"
           value={rewriteGoal}
           onChange={(e) => setRewriteGoal(e.target.value)}
           disabled={isLoading}
-        >
-          {rewriteOptions.map((option) => (
-            <option key={option.id} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+          option={rewriteOptions}
+        />
         <Button onClick={handleRewriteClick} disabled={isLoading}>
           Reescribir
         </Button>
