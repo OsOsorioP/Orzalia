@@ -4,10 +4,12 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
   align-items: center;
+  padding: 0 2rem;
 }
 
 i,svg {
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
 }
