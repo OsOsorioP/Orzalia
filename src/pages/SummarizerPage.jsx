@@ -1,5 +1,4 @@
-import FeatureSection from "../components/common/feactureSection/FeactureSection";
-import HeroSection from "../components/common/heroSection/HeroSection";
+import Info from "../components/common/Info/Info";
 import SummarizerTool from "../features/summarizer/SumarizerTool";
 import { ClockIcon } from "@heroicons/react/24/outline";
 
@@ -7,24 +6,28 @@ const SummarizerPage = () => {
   return (
     <main className="app-container">
       <SummarizerTool />
-      <HeroSection
-        title={
-          <h1>
-            Resumir textos con <span>Rexi Toolkit</span>. ¿Qué beneficios tiene?
-          </h1>
-        }
-        subtitle={"El Resumen de textos te ahorra tiempo"}
+      <Info
+        title={"¿Por qué usar nuestro Resumidor?"}
+        subtitle={"Ahorra Tiempo Precioso"}
         description={
-          "Parafrasist le permite a los usuarios hacer el resumen de un texto rápidamente, condensando textos largos en resúmenes breves y manejables, ahorrando horas de lectura y análisis."
+          "Obtén la esencia de textos largos en segundos, ideal para investigadores, estudiantes y profesionales ocupados."
         }
         icon={<ClockIcon />}
       />
-      <FeatureSection
-        title={"Generador de resúmenes de distintos tamaños e idiomas"}
-        description={
-          "Además de hacer el resumen de un texto corto, parafrasist es un excelente resumidor de libros, ya que utiliza IA (inteligencia artificial). Además puedes resumir textos en inglés, español, portugués, francés, italiano, indonesio, aleman y holandes."
-        }
-        icon={"analitic"}
+      <Info
+        subtitle="Resúmenes Flexibles"
+        description="Elige entre resúmenes cortos, medios o largos para adaptar la información a tus necesidades específicas."
+        icon={<ClockIcon />}
+      />
+      <Info
+        subtitle="Claridad y Precisión"
+        description="Nuestra IA está entrenada para extraer los puntos clave y presentarlos de manera coherente y fácil de entender."
+        icon={<ClockIcon />}
+      />
+      <Info
+        subtitle="Soporte Multilingüe"
+        description="Capaz de procesar y resumir textos en diversos idiomas."
+        icon={<ClockIcon />}
       />
     </main>
   );
