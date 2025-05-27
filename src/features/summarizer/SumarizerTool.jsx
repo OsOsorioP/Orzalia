@@ -4,10 +4,16 @@ import { Textarea } from "../../components/common/Textarea/Textarea";
 import Button from "../../components/common/Button/Button";
 import styles from "../Features.module.css";
 import BoxText from "../../components/common/BoxText/BoxText";
+import Select from "../../components/common/Select/Select";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
   const [summaryLength, setSummaryLength] = useState("medium");
+  const options = [
+    { value: "short", label: "Pequeño" },
+    { value: "medium", label: "Mediano" },
+    { value: "long", label: "Grande" },
+  ];
 
   const { summary, isLoading, error, generateSummary } = useSummarizer();
 
@@ -37,16 +43,13 @@ const SummarizerTool = () => {
         <BoxText>{summary && !isLoading && <p>{summary}</p>}</BoxText>
       </div>
       <div className={styles.form}>
-        <select
-          id="summaryLength"
+        <Select
+          id={"summaryLength"}
+          disabled={isLoading}
           value={summaryLength}
           onChange={(e) => setSummaryLength(e.target.value)}
-          disabled={isLoading}
-        >
-          <option value="short">Pequeño</option>
-          <option value="medium">Mediano</option>
-          <option value="long">Grande</option>
-        </select>
+          option={options}
+        />
         <Button onClick={handleSummarizerClick} disabled={isLoading}>
           Resumir
         </Button>
