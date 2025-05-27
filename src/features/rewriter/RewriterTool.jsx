@@ -47,7 +47,7 @@ export const RewriterTool = () => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2>Asistente de Reescritura</h2>
+        <h1>Asistente de Reescritura</h1>
         <p>
           El Resumidor transforma textos extensos en un resumen de texto a tu
           tamaño deseado. ¡No esperes más, resume texto con solo un clic!
@@ -67,26 +67,23 @@ export const RewriterTool = () => {
           {rewrittenText && !isLoading && <p>{rewrittenText}</p>}
         </BoxText>
       </div>
-      <fieldset>
-        <legend>Objetivo de la reescritura:</legend>
-        {rewriteOptions.map((option) => (
-          <div key={option.id}>
-            <input
-              type="radio"
-              name="rewriteGoal"
-              id={option.id}
-              value={option.value}
-              checked={rewriteGoal === option.value}
-              onChange={(e) => setRewriteGoal(e.target.value)}
-              disabled={isLoading}
-            />
-            <label htmlFor={option.id}>{option.label}</label>
-          </div>
-        ))}
-      </fieldset>
-      <Button onClick={handleRewriteClick} disabled={isLoading}>
-        Reescribir
-      </Button>
+      <div className={styles.fromRewriter}>
+        <select
+          id="rewriterGoal"
+          value={rewriteGoal}
+          onChange={(e) => setRewriteGoal(e.target.value)}
+          disabled={isLoading}
+        >
+          {rewriteOptions.map((option) => (
+            <option key={option.id} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <Button onClick={handleRewriteClick} disabled={isLoading}>
+          Reescribir
+        </Button>
+      </div>
       {error && <p> Error: {error} </p>}
     </section>
   );
