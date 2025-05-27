@@ -45,7 +45,7 @@ export const RewriterTool = () => {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
       <div className={styles.header}>
         <h2>Asistente de Reescritura</h2>
         <p>
@@ -53,7 +53,7 @@ export const RewriterTool = () => {
           tamaño deseado. ¡No esperes más, resume texto con solo un clic!
         </p>
       </div>
-      <div className={styles.container}>
+      <div className={styles.content}>
         <Textarea
           name="textAreaRewrite"
           id="textAreaRewrite"
