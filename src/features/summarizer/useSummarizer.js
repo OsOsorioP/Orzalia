@@ -20,6 +20,7 @@ export const useSummarizer = () => {
     const system_prompt = `Resume el siguiente texto en una longitud ${length}. El resumen debe ser conciso y destacar los puntos clave.`;
 
     const responseText = postCohereChat(system_prompt, originalText, setIsLoading, setError);
+    console.log(responseText)
     setSummary(responseText);
   }, []);
 
