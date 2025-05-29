@@ -19,7 +19,7 @@ export const Textarea = ({
   }`;
 
   return (
-    <div className={styles.textareaWrapper}>
+    <div>
       {label && (
         <label htmlFor={id || name} className={styles.label}>
           {label}
