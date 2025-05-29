@@ -26,3 +26,9 @@ body {
   -webkit-font-smoothinf: antialiased;
   -moz-osx-font: grayscale;
 }
+
+@media (min-width:100px) and (max-width: 1200px){
+  body {
+    padding: 1rem;
+  }
+}
