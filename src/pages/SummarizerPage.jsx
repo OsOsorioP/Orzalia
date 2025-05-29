@@ -1,55 +1,38 @@
+import FeatureItem from "../components/common/FeatureItem/FeatureItem";
 import Card from "../components/ui/Card/Card";
+import CardContent from "../components/ui/Card/CardContent";
+import CardDescription from "../components/ui/Card/CardDescription";
+import CardHeader from "../components/ui/Card/CardHeader";
+import CardTitle from "../components/ui/Card/CardTitle";
 import SummarizerTool from "../features/summarizer/SumarizerTool";
-import { ClockIcon } from "@heroicons/react/24/outline";
-import { BoltIcon } from "@heroicons/react/24/outline";
-import { FireIcon } from "@heroicons/react/24/outline";
-import { UsersIcon } from "@heroicons/react/24/outline";
+import { featuresSummarizer } from "../utils/FeatureData";
 
 const SummarizerPage = () => {
-  const featuresSummarizer = [
-    {
-      icon: <BoltIcon />,
-      title: "Supera el Bloqueo Creativo",
-      description:
-        "¿Atascado sin ideas? Introduce un tema y deja que nuestra IA te proporcione múltiples ángulos y enfoques para tu próximo contenido.",
-      iconBgColor: "bgBlue100",
-      iconTextColor: "textBlue600",
-    },
-    {
-      icon: <FireIcon />,
-      title: "Variedad de Sugerencias",
-      description:
-        "Obtén desde títulos llamativos hasta conceptos más desarrollados, adaptados al tipo de contenido que necesitas.",
-      iconBgColor: "bgOrange100",
-      iconTextColor: "textOrange600",
-    },
-    {
-      icon: <UsersIcon />,
-      title: "Personaliza tu Búsqueda",
-      description:
-        "Especifica la cantidad de ideas y el tipo de contenido (blogs, videos, redes sociales) para resultados más afinados.",
-      iconBgColor: "bgPurple100",
-      iconTextColor: "textPurple600",
-    },
-    {
-      icon: <ClockIcon />,
-      title: "Enfócate en tu Audiencia",
-      description:
-        "Genera ideas que resuenen con tu público objetivo y aborden sus intereses y necesidades.",
-      iconBgColor: "bgGreen100",
-      iconTextColor: "textGreen600",
-    },
-  ];
   return (
     <main className="app-container">
       <SummarizerTool />
-      <Card
-        title={"¿Cómo te ayuda el Generador de Ideas?"}
-        description={
-          " Descubre todas las ventajas de nuestra herramienta potenciada por IA"
-        }
-        features={featuresSummarizer}
-      />
+      <Card>
+        <CardHeader className="textCenter">
+          <CardTitle>¿Cómo te ayuda el Resumidor de Text?</CardTitle>
+          <CardDescription>
+            Nuestro Resumidor de Texto Inteligente no es solo una herramienta, es tu aliado para procesar información de manera eficiente.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="features-grid">
+            {featuresSummarizer.map((feature, index) => (
+              <FeatureItem
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                iconBgColor={feature.iconBgColor}
+                iconTextColor={feature.iconTextColor}
+              />
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </main>
   );
 };
