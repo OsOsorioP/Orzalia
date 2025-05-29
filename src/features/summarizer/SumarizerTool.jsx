@@ -3,8 +3,14 @@ import { useSummarizer } from "./useSummarizer";
 import { Textarea } from "../../components/common/Textarea/Textarea";
 import Button from "../../components/common/Button/Button";
 import styles from "../Features.module.css";
-import BoxText from "../../components/common/BoxText/BoxText";
 import Select from "../../components/common/Select/Select";
+import HeroSection from "../../components/common/HeroSection/HeroSection";
+import Card from "../../components/ui/Card/Card";
+import CardContent from "../../components/ui/Card/CardContent";
+import CardDescription from "../../components/ui/Card/CardDescription";
+import CardHeader from "../../components/ui/Card/CardHeader";
+import CardTitle from "../../components/ui/Card/CardTitle";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -23,36 +29,65 @@ const SummarizerTool = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
-        <h1>Resumidor</h1>
-        <p>
-          El Resumidor transforma textos extensos en un resumen de texto a tu
-          tamaño deseado. ¡No esperes más, resume texto con solo un clic!
-        </p>
-      </div>
+      <HeroSection
+        titleGradientPart="en Segundos"
+        titlePart1="Extrae la Esencia,"
+        description="Nuestro Resumidor de Texto con IA condensa artículos extensos, documentos y cualquier texto en resúmenes claros y concisos. Ahorra tiempo y llega al núcleo de la información al instante."
+      />
       <div className={styles.content}>
-        <Textarea
-          name="originalText"
-          id="originalText"
-          value={originalText}
-          onChange={(e) => setOriginalText(e.target.value)}
-          placeholder="Pega aquí el texto que deseas resumir..."
-          rows={10}
-          disabled={isLoading}
-        />
-        <BoxText>{summary && !isLoading && <p>{summary}</p>}</BoxText>
-      </div>
-      <div className={styles.form}>
-        <Select
-          id={"summaryLength"}
-          disabled={isLoading}
-          value={summaryLength}
-          onChange={(e) => setSummaryLength(e.target.value)}
-          option={options}
-        />
-        <Button onClick={handleSummarizerClick} disabled={isLoading}>
-          Resumir
-        </Button>
+        <Card>
+          <CardHeader>
+            <CardTitle className={styles.formTitle}>
+              <LightBulbIcon width={"1.5rem"}  color="dodgerblue"/>
+              <span>Configuración</span>
+            </CardTitle>
+            <CardDescription>
+              Personaliza tu generación de ideas según tus necesidades
+            </CardDescription>
+          </CardHeader>
+          <CardContent className={styles.cardContent}>
+            <Textarea
+              name="originalText"
+              id="originalText"
+              value={originalText}
+              onChange={(e) => setOriginalText(e.target.value)}
+              placeholder="Pega aquí el texto que deseas resumir..."
+              rows={10}
+              disabled={isLoading}
+            />
+            <div className={styles.actions}>
+              <Select
+                id={"summaryLength"}
+                disabled={isLoading}
+                value={summaryLength}
+                onChange={(e) => setSummaryLength(e.target.value)}
+                option={options}
+              />
+              <Button onClick={handleSummarizerClick} disabled={isLoading}>
+                Resumir
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className={styles.formTitle}>
+              <LightBulbIcon width={"1.5rem"}  color="firebrick" />
+              <span>Ideas Generadas</span>
+            </CardTitle>
+            <CardDescription>
+              Tus ideas personalizadas aparecerán aquí
+            </CardDescription>
+          </CardHeader>
+          <CardContent className={styles.cardContent}>
+            <Textarea
+              placeholder="Las ideas generadas aparecerán aquí..."
+              value={summary}
+              readOnly
+              className=""
+            />
+          </CardContent>
+        </Card>
       </div>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
     </section>
