@@ -5,6 +5,13 @@ import Textarea from "../../components/common/Textarea/Textarea";
 import BoxText from "../../components/common/BoxText/BoxText";
 import styles from "../Features.module.css";
 import Select from "../../components/common/Select/Select";
+import HeroSection from "../../components/common/HeroSection/HeroSection";
+import Card from "../../components/ui/Card/Card";
+import CardContent from "../../components/ui/Card/CardContent";
+import CardDescription from "../../components/ui/Card/CardDescription";
+import CardHeader from "../../components/ui/Card/CardHeader";
+import CardTitle from "../../components/ui/Card/CardTitle";
+import { SparklesIcon , PencilIcon  } from "@heroicons/react/24/outline";
 
 export const RewriterTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -47,38 +54,62 @@ export const RewriterTool = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.header}>
-        <h1>Asistente de Reescritura</h1>
-        <p>
-          El Resumidor transforma textos extensos en un resumen de texto a tu
-          tamaño deseado. ¡No esperes más, resume texto con solo un clic!
-        </p>
-      </div>
+      <HeroSection
+        titleGradientPart="Perfecciona tu Mensaje"
+        titlePart1="Transforma tus Palabras, "
+        description="Nuestro Asistente de Reescritura con IA te ayuda a refinar tu texto, mejorar la claridad, ajustar el tono y corregir errores para una comunicación impecable y efectiva."
+      />
       <div className={styles.content}>
-        <Textarea
-          name="textAreaRewrite"
-          id="textAreaRewrite"
-          value={originalText}
-          onChange={(e) => setOriginalText(e.target.value)}
-          placeholder="Ingresa el texto que quieres reescribir aquí..."
-          rows={8}
-          disabled={isLoading}
-        />
-        <BoxText>
-          {rewrittenText && !isLoading && <p>{rewrittenText}</p>}
-        </BoxText>
-      </div>
-      <div className={styles.fromRewriter}>
-        <Select
-          id="rewriterGoal"
-          value={rewriteGoal}
-          onChange={(e) => setRewriteGoal(e.target.value)}
-          disabled={isLoading}
-          option={rewriteOptions}
-        />
-        <Button onClick={handleRewriteClick} disabled={isLoading}>
-          Reescribir
-        </Button>
+        <Card>
+          <CardHeader>
+            <CardTitle className={styles.formTitle}>
+              <PencilIcon width={"1.5rem"}  color="dodgerblue" />
+              <span>Texto Original</span>
+            </CardTitle>
+            <CardDescription></CardDescription>
+          </CardHeader>
+          <CardContent className={styles.cardContent}>
+            <Textarea
+              name="textAreaRewrite"
+              id="textAreaRewrite"
+              value={originalText}
+              onChange={(e) => setOriginalText(e.target.value)}
+              placeholder="Ingresa el texto que quieres reescribir aquí..."
+              rows={8}
+              disabled={isLoading}
+            />
+            <div className={styles.actions}>
+              <Select
+                id="rewriterGoal"
+                value={rewriteGoal}
+                onChange={(e) => setRewriteGoal(e.target.value)}
+                disabled={isLoading}
+                option={rewriteOptions}
+              />
+              <Button onClick={handleRewriteClick} disabled={isLoading}>
+                Reescribir
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className={styles.formTitle}>
+              <SparklesIcon width={"1.5rem"}  color="purple"/>
+              <span>Texto Mejorado</span>
+            </CardTitle>
+            <CardDescription></CardDescription>
+          </CardHeader>
+          <CardContent className={styles.cardContent}>
+            <Textarea
+              placeholder="Lo reescrito aparecerá aquí..."
+              value={rewrittenText}
+              readOnly
+              className=""
+            />
+          </CardContent>
+        </Card>
       </div>
       {error && <p> Error: {error} </p>}
     </section>
