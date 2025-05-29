@@ -1,19 +1,20 @@
-.customSelectWrapper {
-  
-}
-
 .customSelect {
-  display: block;
+  width: 100%;
   font-size: 1rem;
-  font-weight: 600;
   line-height: 1.5;
   color: var(--text-color);
   background-color: transparent;
-  border: 0px solid var(--tertiary-color);
+  border: 1px solid rgb(152, 152, 152);
   cursor: pointer;
   border-radius: 0.3rem;
   padding: 0.3rem 0.5rem;
-  background-color: var(--secondary-color);
+  background-color: none;
+}
+
+.label {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 500;
 }
 
 .customSelect:focus {
@@ -22,6 +23,6 @@
 }
 
 .customSelect option {
-  background-color: var(--background-color);
+  background-color: none;
   color: var(--text-color);
 }
