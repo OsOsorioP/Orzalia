@@ -27,8 +27,9 @@ export const useIdeaGenerator = () => {
         setIsLoading,
         setError
       );
+      console.log(responseIdeaGenerate)
       setIdeas(
-        responseIdeaGenerate.split("\n").filter((idea) => idea.trim() !== "")
+        responseIdeaGenerate
       );
     },
     []
