@@ -16,21 +16,36 @@
 .descriptionPlataform {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-}
-
-.sectionTools ul {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: center;
-  list-style: none;
 }
 
-.sectionTools li {
+.sectionTools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sectionTools nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTools div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTools a {
+  width: fit-content;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.sectionTools a:hover {
+  text-decoration: underline;
 }
 
 .sectionLogo {
@@ -58,14 +73,14 @@
   font-size: 1.5rem;
 }
 
-.footerDown {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+@media (max-width: 400px) {
+  .descriptionPlataform {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.socialNet {
-  display: flex;
+@media (min-width: 401px) and (max-width: 700px) {
+  .descriptionPlataform {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
