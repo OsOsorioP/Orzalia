@@ -10,7 +10,7 @@ import CardContent from "../../components/ui/Card/CardContent";
 import CardDescription from "../../components/ui/Card/CardDescription";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import CardTitle from "../../components/ui/Card/CardTitle";
-import { LightBulbIcon } from "@heroicons/react/24/outline";
+import { LightBulbIcon,DocumentTextIcon  } from "@heroicons/react/24/outline";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -38,11 +38,11 @@ const SummarizerTool = () => {
         <Card>
           <CardHeader>
             <CardTitle className={styles.formTitle}>
-              <LightBulbIcon width={"1.5rem"}  color="dodgerblue"/>
-              <span>Configuración</span>
+              <DocumentTextIcon width={"1.5rem"}  color="dodgerblue"/>
+              <span>Texto Original</span>
             </CardTitle>
             <CardDescription>
-              Personaliza tu generación de ideas según tus necesidades
+              
             </CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
@@ -73,10 +73,9 @@ const SummarizerTool = () => {
           <CardHeader>
             <CardTitle className={styles.formTitle}>
               <LightBulbIcon width={"1.5rem"}  color="firebrick" />
-              <span>Ideas Generadas</span>
+              <span>Resumen Generado</span>
             </CardTitle>
             <CardDescription>
-              Tus ideas personalizadas aparecerán aquí
             </CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
