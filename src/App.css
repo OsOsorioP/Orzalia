@@ -3,6 +3,8 @@ h2,
 h3 {
   font-weight: 700;
   color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -19,6 +21,7 @@ label {
   font-weight: 400;
   text-wrap: pretty;
   color: var(--text-color);
+
 }
 
 img,
@@ -28,4 +31,30 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+}
+
+.IconSize {
+  width: 3rem;
+  height: 3rem;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
