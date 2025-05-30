@@ -29,19 +29,19 @@ Prueba Orzalia aquí: **[orzalia.vercel.app](https://orzalia.vercel.app/)**
 
 Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar tu flujo de trabajo con contenido:
 
-*   **✍️ Asistente de Reescritura Inteligente:**
-    *   Refina tus textos, mejora la claridad y ajusta el tono (formal, informal, simplificar, expandir, etc.).
-    *   Corrige gramática y estilo para una comunicación impecable.
-*   **💡 Generador de Ideas para Contenido:**
-    *   Supera el bloqueo creativo con sugerencias frescas y ángulos únicos para tus artículos, videos o posts.
-    *   Personaliza la cantidad de ideas y el tipo de contenido deseado.
-*   **✂️ Resumidor de Texto Eficiente:**
-    *   Extrae la esencia de artículos extensos y documentos en segundos.
-    *   Obtén resúmenes claros y concisos en diferentes longitudes (corto, medio, largo).
-*   **🎨 Interfaz Intuitiva y Responsiva:**
-    *   Diseño limpio y fácil de usar para una experiencia de usuario agradable en cualquier dispositivo.
-*   **⚡ Carga Rápida con Lazy Loading:**
-    *   Optimización del rendimiento mediante la carga diferida de componentes de ruta.
+#### ✍️ Asistente de Reescritura Inteligente:
+* Refina tus textos, mejora la claridad y ajusta el tono (formal, informal, simplificar, expandir, etc.). <br/>
+* Corrige gramática y estilo para una comunicación impecable.
+#### 💡 Generador de Ideas para Contenido:
+* Supera el bloqueo creativo con sugerencias frescas y ángulos únicos para tus artículos, videos o posts.
+* Personaliza la cantidad de ideas y el tipo de contenido deseado.
+#### ✂️ Resumidor de Texto Eficiente:
+* Extrae la esencia de artículos extensos y documentos en segundos.
+* Obtén resúmenes claros y concisos en diferentes longitudes (corto, medio, largo).
+#### 🎨 Interfaz Intuitiva y Responsiva:
+* Diseño limpio y fácil de usar para una experiencia de usuario agradable en cualquier dispositivo.
+#### ⚡ Carga Rápida con Lazy Loading:
+* Optimización del rendimiento mediante la carga diferida de componentes de ruta.
 
 ---
 
