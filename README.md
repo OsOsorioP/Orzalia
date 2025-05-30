@@ -11,7 +11,6 @@
 
 Orzalia es una aplicación web interactiva construida con React, JavaScript y Vite. Se integra con la potente API de Cohere para ofrecer herramientas inteligentes que transforman tu manera de crear y procesar contenido textual. Este proyecto demuestra el consumo de APIs de IA, la creación de interfaces de usuario dinámicas y la aplicación de buenas prácticas de desarrollo frontend.
 
----
 
 ## Tech Stack
 **Front-end:**
@@ -33,9 +32,6 @@ CSS Global (para resets y estilos base)
 
 **Despliegue:** 
 Vercel
-
-**Prueba Orzalia aquí: **
-[orzalia.vercel.app](https://orzalia.vercel.app/)
 
 ---
 
