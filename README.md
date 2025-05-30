@@ -25,8 +25,8 @@ Una aplicación web interactiva construida con React, JavaScript y Vite que se i
 
 Este proyecto se desarrolla siguiendo las siguientes fases:
 
-1.  🚀 Fase 1: Configuración Inicial y Conexión Básica
-2.  💬 Fase 2: Interfaz de Usuario Interactiva para el Chat
+1.  🚀 Fase 1: Funcionamiento de los features
+2.  💬 Fase 2: Interfaz de Usuario Interactiva para cada feature
 3.  ✨ Fase 3: Mejoras de UI/UX y Funcionalidades Adicionales
 4.  🧪 Fase 4: Calidad y Pruebas
 5.  📄 Fase 5: Documentación Final y Despliegue
