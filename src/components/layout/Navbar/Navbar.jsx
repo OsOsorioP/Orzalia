@@ -26,6 +26,10 @@ const Navbar = () => {
     },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const getNavLinkClass = ({ isActive }) => {
     return isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
   };
@@ -40,7 +44,7 @@ const Navbar = () => {
         <ul className={styles.navList}>
           {navLinks.map((link, index) => (
             <li key={index} className={styles.navItem}>
-              <NavLink to={link.to} className={getNavLinkClass}>
+              <NavLink to={link.to} className={getNavLinkClass} onClick={scrollToTop}>
                 {link.icon}
                 <span>{link.name}</span>
               </NavLink>
