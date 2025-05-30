@@ -47,9 +47,11 @@ const SummarizerTool = () => {
                 <DocumentTextIcon width={"1.5rem"} color="dodgerblue" />
                 <span>Texto Original</span>
               </div>
-              {originalText && (<div className={styles.flex}>
-                <TrashIcon className={styles.iconDelete} />
-              </div>)}
+              {originalText && (
+                <button className={styles.buttonDelete}>
+                  <TrashIcon className={styles.iconDelete} />
+                </button>
+              )}
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
@@ -87,9 +89,11 @@ const SummarizerTool = () => {
                 <LightBulbIcon width={"1.5rem"} color="firebrick" />
                 <span>Resumen Generado</span>
               </div>
-              {summary && (<div className={styles.flex}>
-                <DocumentDuplicateIcon className={styles.iconCopy} />
-              </div>)}
+              {summary && (
+                <button className={styles.flex}>
+                  <DocumentDuplicateIcon className={styles.iconCopy} />
+                </button>
+              )}
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
