@@ -10,7 +10,12 @@ import CardContent from "../../components/ui/Card/CardContent";
 import CardDescription from "../../components/ui/Card/CardDescription";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import CardTitle from "../../components/ui/Card/CardTitle";
-import { LightBulbIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
+import {
+  LightBulbIcon,
+  DocumentTextIcon,
+  DocumentDuplicateIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -37,9 +42,14 @@ const SummarizerTool = () => {
       <div className={styles.content}>
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <DocumentTextIcon width={"1.5rem"} color="dodgerblue" />
-              <span>Texto Original</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <DocumentTextIcon width={"1.5rem"} color="dodgerblue" />
+                <span>Texto Original</span>
+              </div>
+              {originalText && (<div className={styles.flex}>
+                <TrashIcon className={styles.iconDelete} />
+              </div>)}
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
@@ -59,9 +69,12 @@ const SummarizerTool = () => {
                 disabled={isLoading}
                 value={summaryLength}
                 onChange={(e) => setSummaryLength(e.target.value)}
-                option={options}
+                options={options}
               />
-              <Button onClick={handleSummarizerClick} disabled={isLoading}>
+              <Button
+                onClick={handleSummarizerClick}
+                disabled={isLoading || !originalText}
+              >
                 Resumir
               </Button>
             </div>
@@ -69,9 +82,14 @@ const SummarizerTool = () => {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <LightBulbIcon width={"1.5rem"} color="firebrick" />
-              <span>Resumen Generado</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <LightBulbIcon width={"1.5rem"} color="firebrick" />
+                <span>Resumen Generado</span>
+              </div>
+              {summary && (<div className={styles.flex}>
+                <DocumentDuplicateIcon className={styles.iconCopy} />
+              </div>)}
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
