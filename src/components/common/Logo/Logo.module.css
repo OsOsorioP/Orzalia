@@ -1,0 +1,16 @@
+.containerLogo {
+  width: 8.5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.imgLogo {
+  width: 10rem;
+  object-fit: contain;
+}
+
+/*
+Source Serif 4
+Bold Italic
+63
+*/
