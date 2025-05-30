@@ -10,12 +10,28 @@ import CardContent from "../../components/ui/Card/CardContent";
 import CardDescription from "../../components/ui/Card/CardDescription";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import CardTitle from "../../components/ui/Card/CardTitle";
-import { Cog6ToothIcon , DocumentTextIcon } from "@heroicons/react/24/outline";
+import {
+  Cog6ToothIcon,
+  DocumentTextIcon,
+  DocumentDuplicateIcon,
+  TrashIcon,
+  ClipboardDocumentListIcon,
+  ClipboardDocumentCheckIcon,
+} from "@heroicons/react/24/outline";
+import { copyToClipboard } from "../../services/clipboardAPI";
+
+const EXAMPLE_DATA = {
+  topic: "Marketing de Contenidos para Pequeñas Empresas",
+  numberOfIdeas: "5",
+  contentType: "artículos de blog",
+};
 
 const IdeaGeneratorTool = () => {
   const [topic, setTopic] = useState("");
   const [numberOfIdeas, setNumberOfIdeas] = useState("3");
   const [contentType, setContentType] = useState("artículos de blog");
+  const [isCopied, setIsCopied] = useState(false);
+
   const options = [
     { value: "1", label: "1 Idea" },
     { value: "3", label: "3 Ideas" },
@@ -29,6 +45,28 @@ const IdeaGeneratorTool = () => {
     generateIdeas(topic, parseInt(numberOfIdeas, 10), contentType);
   };
 
+  const handleUseExample = () => {
+    setTopic(EXAMPLE_DATA.topic);
+    setNumberOfIdeas(EXAMPLE_DATA.numberOfIdeas);
+    setContentType(EXAMPLE_DATA.contentType);
+  };
+
+  const handleClearForm = () => {
+    setTopic("");
+    setNumberOfIdeas("3");
+    setContentType("artículos de blog");
+  };
+
+  const handleCopyIdeas = async () => {
+    if (!ideas) return;
+
+    await copyToClipboard(ideas);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   return (
     <section className={styles.container}>
       <HeroSection
@@ -39,9 +77,31 @@ const IdeaGeneratorTool = () => {
       <div className={styles.content}>
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <Cog6ToothIcon width={"1.5rem"} color="dodgerblue"/>
-              <span>Configuración</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <Cog6ToothIcon width={"1.5rem"} color="dodgerblue" />
+                <span>Configuración</span>
+              </div>
+              {topic && (
+                <button
+                  className={styles.buttonDelete}
+                  onClick={handleClearForm}
+                  aria-label="Borrar texto original"
+                >
+                  <TrashIcon className={styles.iconDelete} />
+                  <span>Borrar</span>
+                </button>
+              )}
+              {!topic && (
+                <button
+                  className={styles.buttonDelete}
+                  onClick={handleUseExample}
+                  aria-label="Pegar texto de ejemplo"
+                >
+                  <ClipboardDocumentListIcon className={styles.iconDelete} />
+                  <span>Ejemplo</span>
+                </button>
+              )}
             </CardTitle>
             <CardDescription>
               Personaliza tu generación de ideas según tus necesidades
@@ -49,7 +109,9 @@ const IdeaGeneratorTool = () => {
           </CardHeader>
           <CardContent className={styles.featureContent}>
             <div className={styles.flexColum}>
-              <label htmlFor="topic" className={styles.label}>Tema o palabra clave principal:</label>
+              <label htmlFor="topic" className={styles.label}>
+                Tema o palabra clave principal:
+              </label>
               <input
                 type="text"
                 id="topic"
@@ -66,11 +128,13 @@ const IdeaGeneratorTool = () => {
                 value={numberOfIdeas}
                 onChange={(e) => setNumberOfIdeas(e.target.value)}
                 disabled={isLoading}
-                option={options}
+                options={options}
                 label={"Cantidad de ideas: "}
               />
               <div>
-                <label htmlFor="contentType" className={styles.label}>Tipo de contenido:</label>
+                <label htmlFor="contentType" className={styles.label}>
+                  Tipo de contenido:
+                </label>
                 <input
                   type="text"
                   name="contentType"
@@ -83,7 +147,10 @@ const IdeaGeneratorTool = () => {
                 />
               </div>
             </div>
-            <Button onClick={handleIdeaGenerator} disabled={isLoading}>
+            <Button
+              onClick={handleIdeaGenerator}
+              disabled={isLoading || !topic || !contentType}
+            >
               {isLoading ? "Generando Ideas..." : "Generar"}
             </Button>
           </CardContent>
@@ -91,13 +158,34 @@ const IdeaGeneratorTool = () => {
 
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <DocumentTextIcon width={"1.5rem"} color="green" />
-              <span>Ideas Generadas</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <DocumentTextIcon width={"1.5rem"} color="green" />
+                <span>Ideas Generadas</span>
+              </div>
+              {ideas.length > 0 && !isLoading && (
+                <button
+                  className={styles.buttonDelete}
+                  onClick={handleCopyIdeas}
+                  aria-label="Copiar resumen"
+                >
+                  {isCopied ? (
+                    <>
+                      <ClipboardDocumentCheckIcon
+                        className={styles.iconDelete}
+                      />
+                      <span>Copiado!</span>
+                    </>
+                  ) : (
+                    <>
+                      <DocumentDuplicateIcon className={styles.iconDelete} />
+                      <span>Copiar</span>
+                    </>
+                  )}
+                </button>
+              )}
             </CardTitle>
-            <CardDescription>
-              Tus ideas personalizadas aparecerán aquí
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
             <TextArea
