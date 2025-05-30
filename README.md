@@ -19,9 +19,29 @@ Orzalia es una aplicación web interactiva construida con React, JavaScript y Vi
 
 ---
 
-## Demo en Vivo
+## Tech Stack
+**Front-end:**
+React (v18+), 
+JavaScript (ES6+), 
+Vite, 
+React Router DOM
 
-Prueba Orzalia aquí: **[orzalia.vercel.app](https://orzalia.vercel.app/)**
+**Comunicación API:** 
+[Cohere API](https://cohere.com/) (Modelos de Lenguaje Grandes), 
+Axios
+
+**Estilizado:** 
+CSS Modules, 
+CSS Global (para resets y estilos base)
+
+**Iconos:** 
+[Heroicons](https://heroicons.com/)
+
+**Despliegue:** 
+Vercel
+
+**Prueba Orzalia aquí: **
+[orzalia.vercel.app](https://orzalia.vercel.app/)
 
 ---
 
@@ -42,26 +62,6 @@ Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar 
 * Diseño limpio y fácil de usar para una experiencia de usuario agradable en cualquier dispositivo.
 #### ⚡ Carga Rápida con Lazy Loading:
 * Optimización del rendimiento mediante la carga diferida de componentes de ruta.
-
----
-
-## Tecnologías Utilizadas
-
-*   **Frontend:**
-    *   [React](https://reactjs.org/) (v18+) con Hooks
-    *   [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) (ES6+)
-    *   [Vite](https://vitejs.dev/) (Entorno de desarrollo y build)
-    *   [React Router DOM](https://reactrouter.com/) (Para la navegación)
-*   **Comunicación API:**
-    *   [Cohere API](https://cohere.com/) (Modelos de Lenguaje Grandes)
-    *   [Axios](https://axios-http.com/) (Cliente HTTP para peticiones)
-*   **Estilizado:**
-    *   CSS Modules (para estilos encapsulados por componente)
-    *   CSS Global (para resets y estilos base)
-*   **Iconos:**
-    *   [Heroicons](https://heroicons.com/)
-*   **Despliegue:**
-    *   [Vercel](https://vercel.com/)
 
 ---
 
