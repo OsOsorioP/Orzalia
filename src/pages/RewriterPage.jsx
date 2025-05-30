@@ -9,7 +9,7 @@ import { featuresRewriter } from "../utils/FeatureData";
 
 const RewritePage = () => {
   return (
-    <main className="app-container">
+    <main className="appContainer">
       <RewriterTool />
       <Card>
         <CardHeader className="textCenter">
