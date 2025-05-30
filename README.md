@@ -96,7 +96,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 ## Hoja de Ruta del Proyecto (Estado Actual y Próximos Pasos)
 
-Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontramos en [Menciona la fase actual, ej: Fase 3 - Mejoras de UI/UX].
+Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontramos en fase 3 - Mejoras de UI/UX y funcionalidades para los features.
 
 *   [✅] **Fase 1: Funcionamiento de los Features Core**
     *   [✅] Implementación del Resumidor de Texto.
@@ -108,7 +108,7 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
     *   [✅] Diseño básico y layout de cada herramienta.
     *   [✅] Lazy loading para las rutas.
 *   [🚧] **Fase 3: Mejoras de UI/UX y Funcionalidades Adicionales** (En progreso / Próximos pasos)
-    *  [] Agregar a los componentes Props Type. 
+    *   [ ] Agregar a los componentes Props Type. 
     *   [ ] Pulido de estilos y responsividad avanzada.
     *   [ ] Añadir feedback visual más elaborado (ej. toasts para "copiado").
     *   [✅] Implementar opción de "Copiar al portapapeles" para todas las herramientas.
