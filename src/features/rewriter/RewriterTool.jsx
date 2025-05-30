@@ -10,11 +10,23 @@ import CardContent from "../../components/ui/Card/CardContent";
 import CardDescription from "../../components/ui/Card/CardDescription";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import CardTitle from "../../components/ui/Card/CardTitle";
-import { SparklesIcon , PencilIcon  } from "@heroicons/react/24/outline";
+import {
+  SparklesIcon,
+  PencilIcon,
+  DocumentDuplicateIcon,
+  TrashIcon,
+  ClipboardDocumentListIcon,
+  ClipboardDocumentCheckIcon,
+} from "@heroicons/react/24/outline";
+import { copyToClipboard } from "../../services/clipboardAPI";
+
+const EXAMPLE_TEXT =
+  "El informe fue entregado por el gerente ayer. Se indicaron varios puntos importantes que deben ser considerados por el equipo para la siguiente fase del proyecto.";
 
 export const RewriterTool = () => {
   const [originalText, setOriginalText] = useState("");
   const [rewriteGoal, setRewriteGoal] = useState("Hacer más formal");
+  const [isCopied, setIsCopied] = useState(false);
 
   const { rewrittenText, isLoading, error, generateRewrite } = useRewriter();
 
@@ -51,6 +63,24 @@ export const RewriterTool = () => {
     generateRewrite(originalText, rewriteGoal);
   };
 
+  const handleTextDelete = () => {
+    setOriginalText("");
+  };
+
+  const handlePasteExample = () => {
+    setOriginalText(EXAMPLE_TEXT);
+  };
+
+  const handleCopyRewriter = async () => {
+    if (!rewrittenText) return;
+
+    await copyToClipboard(rewrittenText);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   return (
     <section className={styles.container}>
       <HeroSection
@@ -61,9 +91,33 @@ export const RewriterTool = () => {
       <div className={styles.content}>
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <PencilIcon width={"1.5rem"}  color="dodgerblue" />
-              <span>Texto Original</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <PencilIcon width={"1.5rem"} color="dodgerblue" />
+                <span>Texto Original</span>
+              </div>
+              <div>
+                {originalText && (
+                  <button
+                    className={styles.buttonDelete}
+                    onClick={handleTextDelete}
+                    aria-label="Borrar texto original"
+                  >
+                    <TrashIcon className={styles.iconDelete} />
+                    <span>Borrar</span>
+                  </button>
+                )}
+                {!originalText && (
+                  <button
+                    className={styles.buttonDelete}
+                    onClick={handlePasteExample}
+                    aria-label="Pegar texto de ejemplo"
+                  >
+                    <ClipboardDocumentListIcon className={styles.iconDelete} />
+                    <span>Ejemplo</span>
+                  </button>
+                )}
+              </div>
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
@@ -85,7 +139,10 @@ export const RewriterTool = () => {
                 disabled={isLoading}
                 options={rewriteOptions}
               />
-              <Button onClick={handleRewriteClick} disabled={isLoading}>
+              <Button
+                onClick={handleRewriteClick}
+                disabled={isLoading || !originalText}
+              >
                 Reescribir
               </Button>
             </div>
@@ -94,14 +151,38 @@ export const RewriterTool = () => {
 
         <Card>
           <CardHeader>
-            <CardTitle className={styles.formTitle}>
-              <SparklesIcon width={"1.5rem"}  color="purple"/>
-              <span>Texto Mejorado</span>
+            <CardTitle className={styles.contentCopy}>
+              <div className={styles.formTitle}>
+                <SparklesIcon width={"1.5rem"} color="purple" />
+                <span>Texto Mejorado</span>
+              </div>
+              {rewrittenText && !isLoading && (
+                <button
+                  className={styles.buttonDelete}
+                  onClick={handleCopyRewriter}
+                  aria-label="Copiar resumen"
+                >
+                  {isCopied ? (
+                    <>
+                      <ClipboardDocumentCheckIcon
+                        className={styles.iconDelete}
+                      />
+                      <span>Copiado!</span>
+                    </>
+                  ) : (
+                    <>
+                      <DocumentDuplicateIcon className={styles.iconDelete} />
+                      <span>Copiar</span>
+                    </>
+                  )}
+                </button>
+              )}
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
             <Textarea
+              id="rewriteText"
               placeholder="Lo reescrito aparecerá aquí..."
               value={rewrittenText}
               readOnly
