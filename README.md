@@ -11,11 +11,12 @@
 Una aplicación web interactiva construida con React, JavaScript y Vite que se integra con la API de Cohere para proporcionar respuestas inteligentes y conversacionales. Este proyecto demuestra el consumo de APIs de IA y la creación de interfaces de chat dinámicas.
 
 <p align="center"><img src="https://github.com/OsOsorioP/Orzalia/blob/main/src/assets/Logo.png" alt="Demo del Asistente IA" width="700"/></p>
+
 ---
 ## Demo en Vivo
 
-<!-- 🔗 **[ENLACE A TU PROYECTO DESPLEGADO AQUÍ CUANDO ESTÉ LISTO]** -->
-<!-- Ejemplo: [https://mi-asistente-cohere.vercel.app/](https://mi-asistente-cohere.vercel.app/) -->
+[Orzalia web](https://orzalia.vercel.app/)
+
 ---
 
 ## Ruta del Proyecto
