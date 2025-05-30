@@ -44,7 +44,7 @@ Vercel
   <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia02.png?raw=true" alt="Logo de Orzalia" width="600"/>
 </p>
 <p align="center">
-  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia03.png?raw=true" alt="Logo de Orzalia" width="600"/>
+  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia04.png?raw=true" alt="Logo de Orzalia" width="600"/>
 </p>
 
 ## Features
