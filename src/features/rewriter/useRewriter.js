@@ -6,7 +6,7 @@ export const useRewriter = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const generateRewrite = useCallback((originalText, rewriteGoal) => {
+  const generateRewrite = useCallback(async(originalText, rewriteGoal) => {
     if (!originalText || !originalText.trim || typeof originalText !== 'string') {
       setError("Por favor, ingresa texto para reescribir.");
       setRewrittenText("");
@@ -44,14 +44,19 @@ export const useRewriter = () => {
         break;
     }
 
-    const responseRewriter = postCohereChat(
+    try {
+      const responseRewriter = await postCohereChat(
       systemPrompt,
       originalText,
       setIsLoading,
       setError
     );
-
-    setRewrittenText(responseRewriter);
+    setRewrittenText(responseRewriter); 
+    } catch (error) {
+      setError(error.message)
+    } finally {
+      setIsLoading(false)
+    }
   }, []);
 
   return { rewrittenText, isLoading, error, generateRewrite };
