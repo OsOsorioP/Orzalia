@@ -7,8 +7,12 @@ export const useSummarizer = () => {
   const [isLoading, setIsLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  const generateSummary = useCallback((originalText, length) => {
-    if (!originalText || !originalText.trim || typeof originalText !== 'string') {
+  const generateSummary = useCallback(async (originalText, length) => {
+    if (
+      !originalText ||
+      !originalText.trim ||
+      typeof originalText !== "string"
+    ) {
       setError("Por favor, ingresa texto para resumir.");
       setSummary("");
       return;
@@ -17,11 +21,22 @@ export const useSummarizer = () => {
     setIsLoading(true);
     setError(null);
     setSummary("");
+
     const system_prompt = `Resume el siguiente texto en una longitud ${length}. El resumen debe ser conciso y destacar los puntos clave.`;
 
-    const responseText = postCohereChat(system_prompt, originalText, setIsLoading, setError);
-    console.log(responseText)
-    setSummary(responseText);
+    try {
+      const responseText = await postCohereChat(
+        system_prompt,
+        originalText,
+        setIsLoading,
+        setError
+      );
+      setSummary(responseText);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   return { summary, isLoading, error, generateSummary };
