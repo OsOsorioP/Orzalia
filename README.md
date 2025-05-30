@@ -1,4 +1,11 @@
-# Orzalia - Tu Asistente IA para Contenido Inteligente
+<p align="center">
+  <img src="https://github.com/OsOsorioP/Orzalia/blob/main/src/assets/Logo.png?raw=true" alt="Logo de Orzalia" width="300"/>
+</p>
+<!-- <p align="center">
+  <img src="URL_A_TU_GIF_DEMO.gif" alt="Demostración de Orzalia en acción" width="700"/>
+</p> -->
+
+# Orzalia - ¡Tu Asistente IA para Contenido Inteligente!
 
 [![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20Mejoras-yellowgreen)](https://github.com/OsOsorioP/Orzalia)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
@@ -9,13 +16,6 @@
 [![Vercel](https://img.shields.io/badge/Desplegado%20en-Vercel-black?logo=vercel&logoColor=white)](https://orzalia.vercel.app/)
 
 Orzalia es una aplicación web interactiva construida con React, JavaScript y Vite. Se integra con la potente API de Cohere para ofrecer herramientas inteligentes que transforman tu manera de crear y procesar contenido textual. Este proyecto demuestra el consumo de APIs de IA, la creación de interfaces de usuario dinámicas y la aplicación de buenas prácticas de desarrollo frontend.
-
-<p align="center">
-  <img src="https://github.com/OsOsorioP/Orzalia/blob/main/src/assets/Logo.png?raw=true" alt="Logo de Orzalia" width="300"/>
-</p>
-<!-- <p align="center">
-  <img src="URL_A_TU_GIF_DEMO.gif" alt="Demostración de Orzalia en acción" width="700"/>
-</p> -->
 
 ---
 
