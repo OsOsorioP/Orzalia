@@ -83,7 +83,7 @@ export const RewriterTool = () => {
                 value={rewriteGoal}
                 onChange={(e) => setRewriteGoal(e.target.value)}
                 disabled={isLoading}
-                option={rewriteOptions}
+                options={rewriteOptions}
               />
               <Button onClick={handleRewriteClick} disabled={isLoading}>
                 Reescribir
