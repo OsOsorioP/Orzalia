@@ -1,21 +1,17 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Suspense } from "react";
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
-import SummarizerPage from "./pages/SummarizerPage";
-import IdeageneratorPage from "./pages/IdeaGeneratorPage";
-import RewritePage from "./pages/RewriterPage";
+import RoutesPages from "./utils/routers/RoutesPages";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route index element={<SummarizerPage />} />
-        <Route path="idea_generator" element={<IdeageneratorPage />} />
-        <Route path="rewriter" element={<RewritePage />} />
-      </Routes>
-      <Footer />
+      <Suspense fallback={<div>Cargando pagina...</div>}>
+        <Header />
+        <RoutesPages />
+        <Footer />
+      </Suspense>
     </>
   );
 }
