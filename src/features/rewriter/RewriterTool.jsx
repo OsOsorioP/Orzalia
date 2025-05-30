@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useRewriter } from "./useRewriter";
 import Button from "../../components/common/Button/Button";
 import Textarea from "../../components/common/Textarea/Textarea";
-import BoxText from "../../components/common/BoxText/BoxText";
 import styles from "../Features.module.css";
 import Select from "../../components/common/Select/Select";
 import HeroSection from "../../components/common/HeroSection/HeroSection";
