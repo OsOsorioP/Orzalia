@@ -33,27 +33,20 @@ CSS Global (para resets y estilos base)
 **Despliegue:** 
 Vercel
 
----
+## Demo
 
-## Características Principales (Key Features)
+## Features
 
-Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar tu flujo de trabajo con contenido:
+1. **Asistente de Reescritura Inteligente**
 
-#### ✍️ Asistente de Reescritura Inteligente:
-* Refina tus textos, mejora la claridad y ajusta el tono (formal, informal, simplificar, expandir, etc.). <br/>
-* Corrige gramática y estilo para una comunicación impecable.
-#### 💡 Generador de Ideas para Contenido:
-* Supera el bloqueo creativo con sugerencias frescas y ángulos únicos para tus artículos, videos o posts.
-* Personaliza la cantidad de ideas y el tipo de contenido deseado.
-#### ✂️ Resumidor de Texto Eficiente:
-* Extrae la esencia de artículos extensos y documentos en segundos.
-* Obtén resúmenes claros y concisos en diferentes longitudes (corto, medio, largo).
-#### 🎨 Interfaz Intuitiva y Responsiva:
-* Diseño limpio y fácil de usar para una experiencia de usuario agradable en cualquier dispositivo.
-#### ⚡ Carga Rápida con Lazy Loading:
-* Optimización del rendimiento mediante la carga diferida de componentes de ruta.
+2. **Generador de Ideas para Contenido**
 
----
+3. **Resumidor de Texto Eficiente**
+
+4. **Interfaz Intuitiva y Responsiva**
+
+5. **Carga Rápida con Lazy Loading**
+
 
 ## Cómo Empezar (Instrucciones de Configuración Local)
 
@@ -82,7 +75,6 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
     ```
     Abre [http://localhost:5173](http://localhost:5173) (o el puerto que indique Vite) en tu navegador.
 
----
 
 ## Hoja de Ruta del Proyecto (Estado Actual y Próximos Pasos)
 
@@ -114,7 +106,6 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
 
 *(Leyenda: ✅ Completado, 🚧 En Progreso, ⬜ Pendiente)*
 
----
 
 ## Posibles Mejoras Futuras
 
@@ -124,19 +115,14 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
 *   Integración con otras APIs para enriquecer las capacidades (ej. búsqueda web para el generador de ideas).
 *   Modo oscuro.
 
----
 
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si tienes ideas para mejorar Orzalia, por favor abre un issue para discutirlo o envía un pull request.
 
----
 
 ## Contacto
 
 Oscar Osorio – [@OsOsorioP (Twitter)](https://twitter.com/OsOsorioP) – [oscar.osorio1884@gmail.com](mailto:oscar.osorio1884@gmail.com)
 
 Enlace al Proyecto: [https://github.com/OsOsorioP/Orzalia](https://github.com/OsOsorioP/Orzalia)
-
----
-
