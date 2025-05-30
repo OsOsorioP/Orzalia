@@ -1,15 +1,8 @@
 .footer {
+  width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  align-items: center;
-}
-
-.footer hr {
-  width: 100%;
+  border-top: 1px solid gray;
+  padding-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -53,6 +46,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0.3rem;
 }
 
 .sectionLogo p {
@@ -61,16 +55,25 @@
 }
 
 .logo {
-  width: 100%;
-  display: flex;
-  gap: 0.5rem;
-  text-align: left;
+  width: 6rem;
+  height: max-content;
 }
 
-.logo h1 {
-  padding: 0;
-  margin: 0;
-  font-size: 1.5rem;
+.contentSocial{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.ownerSocial a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.ownerSocial a:hover {
+  text-decoration: underline;
 }
 
 .socialWrap {
@@ -79,28 +82,26 @@
 }
 
 .socialWrap a {
-  border: 1px solid #000;
-  border-radius: 50px;
-  box-sizing: border-box;
-  color: #fff;
-  display: inline-block;
-  font-size: 12px;
+  width: 50px;
   height: 50px;
-  margin: 0 10px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.3rem;
+  background-color: var(--primary-color);
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   vertical-align: top;
-  width: 50px;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
-.socialWrap a:hover i > svg {
-  color: rgb(119, 164, 100);
-  fill: aqua;
-  background: var(--secondary-color);
+.socialWrap a:hover {
+  transform: scale(1.1);
+}
+
+.socialWrap a i > svg {
+  fill: var(--secondary-color);
 }
 
 .socialWrap > a > i > svg {
