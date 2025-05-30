@@ -1,6 +1,6 @@
 # Orzalia - Tu Asistente IA para Contenido Inteligente
 
-[![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20Desarrollo-yellowgreen)](https://github.com/OsOsorioP/Orzalia)
+[![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20Mejoras-yellowgreen)](https://github.com/OsOsorioP/Orzalia)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
