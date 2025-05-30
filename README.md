@@ -1,4 +1,4 @@
-# Asistente de IA con React y Cohere API
+# IA para contenido textual inteligente con React y Cohere API
 
 [![Estado del Proyecto](https://img.shields.io/badge/Estado-En%20desarrollo-yellowgreen)](https://github.com/TU_USUARIO/TU_REPOSITORIO)
 [![React](https://img.shields.io/badge/React-gray?logo=react)](https://reactjs.org/)
@@ -7,13 +7,10 @@
 [![Vite](https://img.shields.io/badge/Axios-gray?logo=axios)](https://vitejs.dev/)
 [![Cohere API](https://img.shields.io/badge/Cohere%20API-Integrada-orange)](https://cohere.com/)
 
-<!-- Reemplaza TU_USUARIO/TU_REPOSITORIO con tu información -->
-<!-- Puedes añadir más badges según las tecnologías que uses -->
 
 Una aplicación web interactiva construida con React, JavaScript y Vite que se integra con la API de Cohere para proporcionar respuestas inteligentes y conversacionales. Este proyecto demuestra el consumo de APIs de IA y la creación de interfaces de chat dinámicas.
 
-<!-- 🖼️ **[ESPACIO PARA UN GIF O SCREENSHOT PRINCIPAL DEL PROYECTO]** -->
-<!-- Ejemplo: <p align="center"><img src="./docs/demo.gif" alt="Demo del Asistente IA" width="700"/></p> -->
+<p align="center"><img src="./docs/demo.gif" alt="Demo del Asistente IA" width="700"/></p>
 ---
 ## Demo en Vivo
 
