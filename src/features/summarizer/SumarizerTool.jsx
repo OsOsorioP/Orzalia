@@ -10,7 +10,7 @@ import CardContent from "../../components/ui/Card/CardContent";
 import CardDescription from "../../components/ui/Card/CardDescription";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import CardTitle from "../../components/ui/Card/CardTitle";
-import { LightBulbIcon,DocumentTextIcon  } from "@heroicons/react/24/outline";
+import { LightBulbIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
@@ -32,18 +32,16 @@ const SummarizerTool = () => {
       <HeroSection
         titleGradientPart="en Segundos"
         titlePart1="Extrae la Esencia,"
-        description="Nuestro Resumidor de Texto con IA condensa artículos extensos, documentos y cualquier texto en resúmenes claros y concisos. Ahorra tiempo y llega al núcleo de la información al instante."
+        description="Condensa artículos extensos y cualquier texto en resúmenes claros y concisos. Ahorra tiempo y llega al núcleo de la información al instante."
       />
       <div className={styles.content}>
         <Card>
           <CardHeader>
             <CardTitle className={styles.formTitle}>
-              <DocumentTextIcon width={"1.5rem"}  color="dodgerblue"/>
+              <DocumentTextIcon width={"1.5rem"} color="dodgerblue" />
               <span>Texto Original</span>
             </CardTitle>
-            <CardDescription>
-              
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
             <Textarea
@@ -72,11 +70,10 @@ const SummarizerTool = () => {
         <Card>
           <CardHeader>
             <CardTitle className={styles.formTitle}>
-              <LightBulbIcon width={"1.5rem"}  color="firebrick" />
+              <LightBulbIcon width={"1.5rem"} color="firebrick" />
               <span>Resumen Generado</span>
             </CardTitle>
-            <CardDescription>
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent className={styles.cardContent}>
             <Textarea
