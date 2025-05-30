@@ -9,7 +9,7 @@ import { featuresIdeaGenerator } from "../utils/FeatureData";
 
 const IdeageneratorPage = () => {
   return (
-    <main className="app-container">
+    <main className="appContainer">
       <IdeaGeneratorTool />
       <Card>
         <CardHeader className="textCenter">
