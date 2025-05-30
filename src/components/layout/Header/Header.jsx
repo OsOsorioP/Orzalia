@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className={styles.appHeader}>
-      <Link to="/">
-        <picture className={styles.logoContainer}>
+      <Link to="/" className={styles.logoContainer}>
+        <picture>
           <img className={styles.logo} src={logo} alt="" />
-          <h1 className={styles.title}>Rexi Toolkit</h1>
+          <h1 className={styles.title}>Orzalia</h1>
         </picture>
       </Link>
 
