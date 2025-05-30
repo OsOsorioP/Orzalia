@@ -35,16 +35,16 @@ Vercel
 
 ## Demo
 
-
+[Página web](https://orzalia.vercel.app/)
 
 <p align="center">
-  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia01.png?raw=true" alt="Logo de Orzalia" width="300"/>
+  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia01.png?raw=true" alt="Logo de Orzalia" width="600"/>
 </p>
 <p align="center">
-  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia02.png?raw=true" alt="Logo de Orzalia" width="300"/>
+  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia02.png?raw=true" alt="Logo de Orzalia" width="600"/>
 </p>
 <p align="center">
-  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia03.png?raw=true" alt="Logo de Orzalia" width="300"/>
+  <img src="https://github.com/OsOsorioP/Imagenes/blob/main/Orzalia/Orzalia03.png?raw=true" alt="Logo de Orzalia" width="600"/>
 </p>
 
 ## Features
