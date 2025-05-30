@@ -13,6 +13,51 @@
   gap: 1rem;
 }
 
+.contentCopy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconCopy {
+  width: 2.2rem;
+  border: 1px solid #7a7a7a;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 0px 9px 2px rgba(145,145,145,0.15);
+}
+
+.iconDelete{
+  width: 2.2rem;
+  border: 1px solid rgb(232, 52, 52);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: .3s;
+  color: rgb(232, 52, 52);
+  box-shadow: 0px 0px 9px 2px rgba(145,145,145,0.15);
+}
+
+.iconDelete:hover {
+  background-color: rgb(255, 217, 217);
+  transform: scale(1.1);
+}
+
+.flex {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.iconCopy:hover {
+  background-color: #e8e8e8;
+  border-color: #000;
+  color: #000;
+  transform: scale(1.1);
+}
+
 .featureContent {
   display: flex;
   flex-direction: column;
@@ -52,7 +97,7 @@
   background-color: none;
 }
 
-.actions{
+.actions {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
