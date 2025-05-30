@@ -9,7 +9,7 @@ import { featuresSummarizer } from "../utils/FeatureData";
 
 const SummarizerPage = () => {
   return (
-    <main className="app-container">
+    <main className="appContainer">
       <SummarizerTool />
       <Card>
         <CardHeader className="textCenter">
