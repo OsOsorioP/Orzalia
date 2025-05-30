@@ -8,6 +8,10 @@
 }
 
 .logoContainer {
+  text-decoration: none;
+}
+
+.logoContainer picture {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -16,9 +20,10 @@
 .logo {
   width: 3rem;
   height: 3rem;
+  object-fit: contain;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0;
 }
