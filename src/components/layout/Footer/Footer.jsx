@@ -1,46 +1,39 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../assets/react.svg";
 import styles from "./Footer.module.css";
-import GitHub from "../../../assets/icons/GitHub";
+import Logo from "../../common/Logo/Logo";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <hr />
       <div className={styles.descriptionPlataform}>
         <div className={styles.sectionTools}>
           <h2>Herramientas</h2>
           <nav>
-            <NavLink>Resumidor</NavLink>
-            <NavLink>Reescritor</NavLink>
-            <NavLink>Generador de Ideas</NavLink>
+            <NavLink to="/" onClick={window}>
+              Resumidor
+            </NavLink>
+            <NavLink to="/rewriter">Reescritor</NavLink>
+            <NavLink to="/idea_generator">Generador de Ideas</NavLink>
           </nav>
         </div>
         <div className={styles.sectionTools}>
           <h2>Redes</h2>
-          <div className={styles.socialWrap}>
-            <Link>
-              <i>
-                <GitHub />
-              </i>
-            </Link>
-            <Link>
-              <i>
-                <GitHub />
-              </i>
-            </Link>
-          </div>
+          <Link>Youtube</Link>
+          <Link>Instagram</Link>
+          <Link>X</Link>
         </div>
         <div className={styles.sectionLogo}>
-          <picture className={styles.logo}>
-            <img src={logo} alt="Logo de Rexi Toolkit" />
-            <h1>Rexi Toolkit</h1>
-          </picture>
+          <Logo className={styles.logo} />
           <p>
-            Rexi Toolkit es una paltaforma web que orefece herramientas para
-            crear y gestionar contenido textual, dirigida al publico en general.
-            Incluye servicios para resumir, reescritura y generador de ideas.
+            Orzalia es una plataforma web diseñada con herramientas que facilitan la creación y gestión de contenido textual, dirigida al público en general. Entre sus servicios se incluyen funciones para resumir, reescribir y generar ideas, lo que la convierte en una herramienta versátil para diversos usuarios.  
           </p>
+        </div>
+      </div>
+      <div className={styles.contentSocial}>
+        <div className={styles.ownerSocial}>
+          <Link to={"https://oscarosorio-dev.vercel.app/"} target="_blank">
+            @OsOsorioP
+          </Link>
         </div>
       </div>
     </footer>
