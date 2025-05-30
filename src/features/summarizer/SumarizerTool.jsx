@@ -15,11 +15,16 @@ import {
   DocumentTextIcon,
   DocumentDuplicateIcon,
   TrashIcon,
+  ClipboardDocumentListIcon,
+  ClipboardDocumentCheckIcon,
 } from "@heroicons/react/24/outline";
+import { copyToClipboard } from "../../services/clipboardAPI";
 
 const SummarizerTool = () => {
   const [originalText, setOriginalText] = useState("");
   const [summaryLength, setSummaryLength] = useState("medium");
+  const [isCopied, setIsCopied] = useState(false);
+
   const options = [
     { value: "short", label: "Pequeño" },
     { value: "medium", label: "Mediano" },
@@ -30,6 +35,26 @@ const SummarizerTool = () => {
 
   const handleSummarizerClick = () => {
     generateSummary(originalText, summaryLength);
+  };
+
+  const handleTextDelete = () => {
+    setOriginalText("");
+  };
+
+  const handlePasteExample = () => {
+    setOriginalText(
+      "La inteligencia artificial (IA) está transformando rápidamente nuestro mundo, desde cómo interactuamos con la tecnología hasta cómo operan las industrias. Los modelos de lenguaje grandes (LLMs), un subcampo de la IA, han demostrado capacidades asombrosas en la comprensión y generación de texto similar al humano, abriendo nuevas posibilidades en áreas como la creación de contenido, la traducción, el resumen automático y los asistentes virtuales. A medida que estas tecnologías continúan evolucionando, es crucial considerar tanto sus beneficios potenciales como los desafíos éticos y sociales que presentan, incluyendo el sesgo en los datos de entrenamiento, el impacto en el empleo y la necesidad de una regulación adecuada para asegurar un desarrollo responsable y equitativo. La investigación y el desarrollo en IA progresan a un ritmo sin precedentes, prometiendo innovaciones que podrían redefinir muchos aspectos de nuestra vida cotidiana en los próximos años."
+    );
+  };
+
+  const handleCopySummary = async () => {
+    if (!summary) return;
+
+    await copyToClipboard(summary);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
   };
 
   return (
@@ -47,11 +72,28 @@ const SummarizerTool = () => {
                 <DocumentTextIcon width={"1.5rem"} color="dodgerblue" />
                 <span>Texto Original</span>
               </div>
-              {originalText && (
-                <button className={styles.buttonDelete}>
-                  <TrashIcon className={styles.iconDelete} />
-                </button>
-              )}
+              <div>
+                {originalText && (
+                  <button
+                    className={styles.buttonDelete}
+                    onClick={handleTextDelete}
+                    aria-label="Borrar texto original"
+                  >
+                    <TrashIcon className={styles.iconDelete} />
+                    <span>Borrar</span>
+                  </button>
+                )}
+                {!originalText && (
+                  <button
+                    className={styles.buttonDelete}
+                    onClick={handlePasteExample}
+                    aria-label="Pegar texto de ejemplo"
+                  >
+                    <ClipboardDocumentListIcon className={styles.iconDelete} />
+                    <span>Ejemplo</span>
+                  </button>
+                )}
+              </div>
             </CardTitle>
             <CardDescription></CardDescription>
           </CardHeader>
@@ -67,7 +109,7 @@ const SummarizerTool = () => {
             />
             <div className={styles.actions}>
               <Select
-                id={"summaryLength"}
+                id="summaryLengthSummarizer"
                 disabled={isLoading}
                 value={summaryLength}
                 onChange={(e) => setSummaryLength(e.target.value)}
@@ -75,9 +117,9 @@ const SummarizerTool = () => {
               />
               <Button
                 onClick={handleSummarizerClick}
-                disabled={isLoading || !originalText}
+                disabled={isLoading || !originalText.trim()}
               >
-                Resumir
+                {isLoading ? "Resumiendo..." : "Resumir"}
               </Button>
             </div>
           </CardContent>
@@ -89,9 +131,25 @@ const SummarizerTool = () => {
                 <LightBulbIcon width={"1.5rem"} color="firebrick" />
                 <span>Resumen Generado</span>
               </div>
-              {summary && (
-                <button className={styles.flex}>
-                  <DocumentDuplicateIcon className={styles.iconCopy} />
+              {summary && !isLoading && (
+                <button
+                  className={styles.buttonDelete}
+                  onClick={handleCopySummary}
+                  aria-label="Copiar resumen"
+                >
+                  {isCopied ? (
+                    <>
+                      <ClipboardDocumentCheckIcon
+                        className={styles.iconDelete}
+                      />
+                      <span>Copiado!</span>
+                    </>
+                  ) : (
+                    <>
+                      <DocumentDuplicateIcon className={styles.iconDelete} />
+                      <span>Copiar</span>
+                    </>
+                  )}
                 </button>
               )}
             </CardTitle>
@@ -99,6 +157,7 @@ const SummarizerTool = () => {
           </CardHeader>
           <CardContent className={styles.cardContent}>
             <Textarea
+              id="Ideas"
               placeholder="Las ideas generadas aparecerán aquí..."
               value={summary}
               readOnly
