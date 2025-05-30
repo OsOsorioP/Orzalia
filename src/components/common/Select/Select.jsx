@@ -6,14 +6,14 @@ const Select = ({
   onChange,
   disabled,
   label,
-  option = [],
+  options = [],
   ...rest
 }) => {
   const selectId =
     id || (label ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
 
   return (
-    <form action="" className={styles.formGroup}>
+    <div className={styles.formGroup}>
       {label && (
         <label htmlFor={selectId} className={styles.label}>
           {label}{" "}
@@ -28,14 +28,14 @@ const Select = ({
           {...rest}
           className={styles.customSelect}
         >
-          {option.map((option) => (
+          {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
         </select>
       </div>
-    </form>
+    </div>
   );
 };
 
