@@ -73,6 +73,44 @@
   font-size: 1.5rem;
 }
 
+.socialWrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialWrap a {
+  border: 1px solid #000;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  height: 50px;
+  margin: 0 10px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: top;
+  width: 50px;
+  transition: 0.3s;
+}
+
+.socialWrap a:hover i > svg {
+  color: rgb(119, 164, 100);
+  fill: aqua;
+  background: var(--secondary-color);
+}
+
+.socialWrap > a > i > svg {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
 @media (max-width: 400px) {
   .descriptionPlataform {
     grid-template-columns: repeat(1, 1fr);
