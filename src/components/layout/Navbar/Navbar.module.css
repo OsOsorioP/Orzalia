@@ -71,7 +71,7 @@
 }
 
 .navLink:hover {
-  background-color: #afafaf;
+  background-color: var(--primary-color);
 }
 
 .navLink.active {
