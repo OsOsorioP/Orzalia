@@ -42,7 +42,8 @@ Este proyecto se desarrolla siguiendo las siguientes fases:
     *   [Axios](https://axios-http.com/) (para las peticiones HTTP)
 *   **Estilizado:**
     *   CSS 
-*   **Pruebas (En desarrollo):**
+*   **Otros:**
+*   *   [heroicons.dev](https://heroicons.dev/) (para iconos)
     
 
 ---
