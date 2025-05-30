@@ -92,32 +92,29 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontramos en fase 3 - Mejoras de UI/UX y funcionalidades para los features.
 
-*   [✅] **Fase 1: Funcionamiento de los Features Core**
-    *   [✅] Implementación del Resumidor de Texto.
-    *   [✅] Implementación del Generador de Ideas.
-    *   [✅] Implementación del Asistente de Reescritura.
-*   [✅] **Fase 2: Interfaz de Usuario Interactiva y Navegación**
-    *   [✅] Creación de componentes de UI reutilizables (Button, Input, Textarea, Select, Card).
-    *   [✅] Implementación de React Router DOM para la navegación entre herramientas.
-    *   [✅] Diseño básico y layout de cada herramienta.
-    *   [✅] Lazy loading para las rutas.
-*   [🚧] **Fase 3: Mejoras de UI/UX y Funcionalidades Adicionales** (En progreso / Próximos pasos)
+*   [x] **Fase 1: Funcionamiento de los Features Core**
+    *   [x] Implementación del Resumidor de Texto.
+    *   [x] Implementación del Generador de Ideas.
+    *   [x] Implementación del Asistente de Reescritura.
+*   [x] **Fase 2: Interfaz de Usuario Interactiva y Navegación**
+    *   [x] Creación de componentes de UI reutilizables (Button, Input, Textarea, Select, Card).
+    *   [x] Implementación de React Router DOM para la navegación entre herramientas.
+    *   [x] Diseño básico y layout de cada herramienta.
+    *   [x] Lazy loading para las rutas.
+*   [ ] **Fase 3: Mejoras de UI/UX y Funcionalidades Adicionales** (En progreso / Próximos pasos)
     *   [ ] Agregar a los componentes Props Type. 
     *   [ ] Pulido de estilos y responsividad avanzada.
     *   [ ] Añadir feedback visual más elaborado (ej. toasts para "copiado").
-    *   [✅] Implementar opción de "Copiar al portapapeles" para todas las herramientas.
+    *   [x] Implementar opción de "Copiar al portapapeles" para todas las herramientas.
     *   [ ] Almacenamiento local para preferencias o historial.
     *   [ ] Añadir más opciones de configuración para las llamadas a Cohere (temperatura, modelos específicos).
 *   [ ] **Fase 4: Calidad y Pruebas**
     *   [ ] Refactorización de código y optimizaciones.
     *   [ ] Pruebas unitarias y de integración.
 *   [ ] **Fase 5: Documentación Final y Despliegue**
-    *   [✅] README.md inicial.
-    *   [🚧] Completar y pulir README.md.
-    *   [✅] Despliegue inicial en Vercel.
-
-*(Leyenda: ✅ Completado, 🚧 En Progreso, ⬜ Pendiente)*
-
+    *   [x] README.md inicial.
+    *   [ ] Completar y pulir README.md.
+    *   [x] Despliegue inicial en Vercel.
 
 ## Posibles Mejoras Futuras
 
