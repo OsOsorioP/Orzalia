@@ -143,7 +143,7 @@ export const RewriterTool = () => {
                 onClick={handleRewriteClick}
                 disabled={isLoading || !originalText}
               >
-                Reescribir
+                {isLoading ? "Reescribiendo..." : "Reescribir"}
               </Button>
             </div>
           </CardContent>
