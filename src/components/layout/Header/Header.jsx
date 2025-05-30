@@ -1,19 +1,41 @@
+import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
-import logo from "../../../assets/logo.png";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
+import Logo from "../../common/Logo/Logo";
 
 const Header = () => {
-  return (
-    <header className={styles.appHeader}>
-      <Link to="/" className={styles.logoContainer}>
-        <picture>
-          <img className={styles.logo} src={logo} alt="" />
-          <h1 className={styles.title}>Orzalia</h1>
-        </picture>
-      </Link>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-      <Navbar />
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <header
+      className={`${styles.appHeader} ${
+        isScrolled ? styles.isScroll : ""
+      }`}
+    >
+      <div className={styles.navbar}>
+        <Link to="/" className={styles.logoContainer}>
+          <Logo />
+        </Link>
+
+        <Navbar />
+      </div>
     </header>
   );
 };
