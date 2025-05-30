@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/react.svg";
 import styles from "./Footer.module.css";
+import GitHub from "../../../assets/icons/GitHub";
 
 const Footer = () => {
   return (
@@ -17,9 +18,17 @@ const Footer = () => {
         </div>
         <div className={styles.sectionTools}>
           <h2>Redes</h2>
-          <div>
-            <Link>GitHub</Link>
-            <Link>Linkedlin</Link>
+          <div className={styles.socialWrap}>
+            <Link>
+              <i>
+                <GitHub />
+              </i>
+            </Link>
+            <Link>
+              <i>
+                <GitHub />
+              </i>
+            </Link>
           </div>
         </div>
         <div className={styles.sectionLogo}>
