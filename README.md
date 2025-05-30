@@ -108,14 +108,15 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
     *   [✅] Diseño básico y layout de cada herramienta.
     *   [✅] Lazy loading para las rutas.
 *   [🚧] **Fase 3: Mejoras de UI/UX y Funcionalidades Adicionales** (En progreso / Próximos pasos)
+    *  [] Agregar a los componentes Props Type. 
     *   [ ] Pulido de estilos y responsividad avanzada.
     *   [ ] Añadir feedback visual más elaborado (ej. toasts para "copiado").
-    *   [ ] Implementar opción de "Copiar al portapapeles" para todas las herramientas.
-    *   [ ] (Opcional) Almacenamiento local para preferencias o historial.
-    *   [ ] (Opcional) Añadir más opciones de configuración para las llamadas a Cohere (temperatura, modelos específicos).
+    *   [✅] Implementar opción de "Copiar al portapapeles" para todas las herramientas.
+    *   [ ] Almacenamiento local para preferencias o historial.
+    *   [ ] Añadir más opciones de configuración para las llamadas a Cohere (temperatura, modelos específicos).
 *   [ ] **Fase 4: Calidad y Pruebas**
     *   [ ] Refactorización de código y optimizaciones.
-    *   [ ] (Opcional) Pruebas unitarias y de integración.
+    *   [ ] Pruebas unitarias y de integración.
 *   [ ] **Fase 5: Documentación Final y Despliegue**
     *   [✅] README.md inicial.
     *   [🚧] Completar y pulir README.md.
