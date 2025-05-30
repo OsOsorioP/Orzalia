@@ -8,8 +8,6 @@
 [![Cohere API](https://img.shields.io/badge/Cohere%20API-Integrada-FF4F00)](https://cohere.com/)
 [![Vercel](https://img.shields.io/badge/Desplegado%20en-Vercel-black?logo=vercel&logoColor=white)](https://orzalia.vercel.app/)
 
-<!-- Reemplaza TU_USUARIO/TU_REPOSITORIO con tu información real si el badge de estado no apunta correctamente -->
-
 Orzalia es una aplicación web interactiva construida con React, JavaScript y Vite. Se integra con la potente API de Cohere para ofrecer herramientas inteligentes que transforman tu manera de crear y procesar contenido textual. Este proyecto demuestra el consumo de APIs de IA, la creación de interfaces de usuario dinámicas y la aplicación de buenas prácticas de desarrollo frontend.
 
 <p align="center">
@@ -21,13 +19,13 @@ Orzalia es una aplicación web interactiva construida con React, JavaScript y Vi
 
 ---
 
-## 🚀 Demo en Vivo
+## Demo en Vivo
 
 Prueba Orzalia aquí: **[orzalia.vercel.app](https://orzalia.vercel.app/)**
 
 ---
 
-## ✨ Características Principales (Key Features)
+## Características Principales (Key Features)
 
 Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar tu flujo de trabajo con contenido:
 
@@ -47,7 +45,7 @@ Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar 
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 *   **Frontend:**
     *   [React](https://reactjs.org/) (v18+) con Hooks
@@ -67,7 +65,7 @@ Orzalia te ofrece un conjunto de herramientas potenciadas por IA para optimizar 
 
 ---
 
-## 🏁 Cómo Empezar (Instrucciones de Configuración Local)
+## Cómo Empezar (Instrucciones de Configuración Local)
 
 Para ejecutar este proyecto localmente, sigue estos pasos:
 
@@ -96,7 +94,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 ---
 
-## 🗺️ Hoja de Ruta del Proyecto (Estado Actual y Próximos Pasos)
+## Hoja de Ruta del Proyecto (Estado Actual y Próximos Pasos)
 
 Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontramos en [Menciona la fase actual, ej: Fase 3 - Mejoras de UI/UX].
 
@@ -127,7 +125,7 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
 
 ---
 
-## 💡 Posibles Mejoras Futuras
+## Posibles Mejoras Futuras
 
 *   Streaming de respuestas de Cohere para una sensación más instantánea.
 *   Soporte para múltiples conversaciones o historial persistente por usuario (requeriría backend y autenticación).
@@ -137,21 +135,15 @@ Este proyecto se desarrolla siguiendo fases iterativas. Actualmente nos encontra
 
 ---
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Las contribuciones son bienvenidas. Si tienes ideas para mejorar Orzalia, por favor abre un issue para discutirlo o envía un pull request.
 
 ---
 
-## 📜 Licencia
+## Contacto
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
-## 📬 Contacto
-
-Oscar Osorio – [@OsOsorioP (Twitter)](https://twitter.com/OsOsorioP) – [tu.email@ejemplo.com](mailto:tu.email@ejemplo.com)
+Oscar Osorio – [@OsOsorioP (Twitter)](https://twitter.com/OsOsorioP) – [oscar.osorio1884@gmail.com](mailto:oscar.osorio1884@gmail.com)
 
 Enlace al Proyecto: [https://github.com/OsOsorioP/Orzalia](https://github.com/OsOsorioP/Orzalia)
 
