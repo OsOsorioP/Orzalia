@@ -1,5 +1,7 @@
 .appNavbar {
   display: block;
+  width: 100%;
+  height: 100vh;
 }
 
 .menu {
@@ -27,7 +29,7 @@
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   gap: 1rem;
   justify-content: center;
