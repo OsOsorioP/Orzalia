@@ -21,7 +21,6 @@ label {
   font-weight: 400;
   text-wrap: pretty;
   color: var(--text-color);
-
 }
 
 img,
@@ -38,7 +37,7 @@ svg {
   height: 3rem;
 }
 
-.textCenter{
+.textCenter {
   text-align: center;
 }
 
@@ -59,8 +58,8 @@ svg {
   }
 }
 
-  @media (min-width:100px) and (max-width: 1200px){
+@media (min-width: 100px) and (max-width: 1200px) {
   .appContainer {
-    padding: 1rem;
+    padding: 0 1rem;
   }
 }
