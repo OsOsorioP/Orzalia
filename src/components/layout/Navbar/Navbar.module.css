@@ -59,6 +59,10 @@
 }
 
 .navLink {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
   text-decoration: none;
   border-radius: 0.3rem;
   padding: 0.5rem;
@@ -71,8 +75,9 @@
 }
 
 .navLink.active {
-  background-color: #ced8e2;
+  background-color: var(--primary-color);
   font-weight: bold;
+  color: var(--secondary-color);
 }
 
 @media (min-width: 768px) {
