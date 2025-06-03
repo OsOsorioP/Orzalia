@@ -44,7 +44,11 @@ const Navbar = () => {
         <ul className={styles.navList}>
           {navLinks.map((link, index) => (
             <li key={index} className={styles.navItem}>
-              <NavLink to={link.to} className={getNavLinkClass} onClick={scrollToTop}>
+              <NavLink
+                to={link.to}
+                className={getNavLinkClass}
+                onClick={scrollToTop}
+              >
                 {link.icon}
                 <span>{link.name}</span>
               </NavLink>
@@ -72,7 +76,8 @@ const Navbar = () => {
               className={getNavLinkClass}
               onClick={toggleMenu}
             >
-              {link.name}
+              {link.icon}
+              <span>{link.name}</span>
             </NavLink>
           ))}
         </nav>
